@@ -1,14 +1,12 @@
-<h1 align="center">
-  🔗 Naoki V2 🚀
-</h1>
+<h1 align="center">🔗 Naoki V2 🚀</h1>
 
 **NOTE:** \
-Ce bot n'a pas été fait par moi, j'ai simplement retirer la plus grande partie des bugs présente sur le bot le rendantt utilisable.
+Ce bot n'a pas été fait par moi, j'ai simplement retiré la plus grande partie des bugs qui étaient présents et le rendait inutilisable.
 
 ---
 ## <a id="menu"></a>🔱 » Menu
 
-- [🔰Fonctionnalitées](#features)
+- [🔰・Fonctionnalitées](#features)
 - [🌌・Discord](https://discord.gg/nANSkCyehT)
 - [🎉・Lancement](#setup)
 - [⚙・Config](#config)
@@ -32,14 +30,14 @@ Ce bot n'a pas été fait par moi, j'ai simplement retirer la plus grande partie
 
 ## <a id="setup"></a> 📁 » Setting up 
 
-1. Installe [Nodejs](https://nodejs.org/ko/blog/release/v16.19.0/)
-2. Ouvre le fichier [config.js](https://github.com/002-sans/Naoki-Bot-Perso/blob/main/config.js) avec un bloc note ou autre
-3. Ouvre une console dans le répertoire des fichiers
-4. Ecrit `npm i && node index`
+1. Installez [Nodejs](https://nodejs.org/ko/blog/release/v16.19.0/)
+2. Ouvrez le fichier [config.js](https://github.com/002-sans/Naoki-Bot-Perso/blob/main/config.js) avec le bloc-note ou autre
+3. Ouvrez un terminal dans le répertoire des fichiers
+4. Entrez la commande `npm i && node index`
 
 # <a id="config"></a>⚙ » Config
 
-Si tu veux configurer le fichier [config.js](https://github.com/002-sans/Naoki-Bot-Perso/blob/main/config.js), tu peux suivre l'exemple:
+Pour configurer le fichier [config.js](https://github.com/002-sans/Naoki-Bot-Perso/blob/main/config.js), vous pouvez suivre l'exemple ci-dessous:
 
 ```js
 module.exports = {
@@ -63,5 +61,3 @@ module.exports = {
     }
 }
 ```
-
---- 
