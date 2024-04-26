@@ -64,4 +64,10 @@ module.exports = {
 }
 ```
 
---- 
+---
+
+
+# Mis à jour par :
+- 002-sans
+- Tarkhubal
+- LGDFR
