@@ -31,7 +31,7 @@ module.exports = {
 
             let reason = args.slice(1).join(" ") || `Aucune raison`
 
-            message.reply({ content: `${member} à été expulsé du serveur` }).catch(err => err)
+            message.reply({ content: `${member} a été expulsé du serveur` }).catch(err => err)
             member.kick(`${reason}`).catch(() => false)
 
             const embed = new Discord.MessageEmbed()
@@ -61,7 +61,7 @@ module.exports = {
 
             let reason = args.slice(1).join(" ") || `Aucune raison`
 
-            message.reply({ content: `${member} à été expulsé du serveur` })
+            message.reply({ content: `${member} a été expulsé du serveur` })
             member.kick(`${reason}`)
 
             const embed = new Discord.MessageEmbed()

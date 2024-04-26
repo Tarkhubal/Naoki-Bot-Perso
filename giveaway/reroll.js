@@ -11,7 +11,7 @@ const pga = new db.table("PermGa")
 module.exports = {
     name: 'reroll',
     usage: 'reroll',
-    description: `Permet de reroll un Giveaway sur le serveur.`,
+    description: `Permet de relancer un giveaway sur le serveur.`,
     async execute(client, message, args) {
 
         if (owner.get(`owners.${message.author.id}`) || message.member.roles.cache.has(pga.fetch(`permga_${message.guild.id}`)) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -23,12 +23,12 @@ module.exports = {
             if (color == null) color = config.app.color
 
             if (!args[0])
-            return message.reply(`Aucun giveaway de trouvé pour \`${args[0] || 'rien'}\``)
+            return message.reply(`Aucun giveaway trouvé pour \`${args[0] || 'rien'}\``)
         
             await client.giveawaysManager.reroll(args[0], {
                 messages: {
-                    congrat: ':tada: Nouveau gagnant(s): {winners}! Félicitation, tu as gagné **{this.prize}**!',
-                    error: 'Aucun membre de participe à ce giveaway, le(s) gagnant(s) ne peuvent pas être choisi!'
+                    congrat: ':tada: Nouveau gagnant(s): {winners}! Félicitation, vous avez gagné **{this.prize}**!',
+                    error: 'Aucun membre ne participe à ce giveaway, le(s) gagnant(s) ne peuvent pas être choisi!'
                 }
             })
             .catch(() => message.reply(`Aucun giveaway de trouvé pour \`${args[0] || 'rien'}\``))

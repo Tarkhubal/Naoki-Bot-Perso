@@ -48,12 +48,12 @@ module.exports = {
             if (isLink == true) {
                 newMessage.delete()
                 newMessage.member.timeout(15000)
-                newMessage.channel.send({ content: `<@${newMessage.author.id}> Tu n'as pas le droit de d'envoyé de lien dans ce serveur.` }).then(msg => {
+                newMessage.channel.send({ content: `<@${newMessage.author.id}> Tu n'as pas le droit d'envoyer de liens dans ce serveur.` }).then(msg => {
                     setTimeout(() => msg.delete(), 6000)
                 })
 
                 const embed = new Discord.MessageEmbed()
-                    .setDescription(`<@${newMessage.author.id}> a envoyer un \`lien\` dans \`${newMessage.channel.name}\`, j'ai supprimé son message`)
+                    .setDescription(`<@${newMessage.author.id}> a envoyé un \`lien\` dans \`${newMessage.channel.name}\`, j'ai supprimé son message`)
                     .setTimestamp()
                 client.channels.cache.get(rlog.fetch(`${newMessage.guild.id}.raidlog`)).send({ embeds: [embed] }).catch(() => false)
             }

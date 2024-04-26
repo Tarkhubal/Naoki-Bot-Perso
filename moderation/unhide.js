@@ -33,7 +33,7 @@ module.exports = {
                 } catch (e) {
                     console.log(e);
                 }
-                message.channel.send(`Les membres ne peuvent à nouveau voir le salon <#${channel.id}>`);
+                message.channel.send(`Les membres peuvent à nouveau voir le salon <#${channel.id}>`);
             }
 
 

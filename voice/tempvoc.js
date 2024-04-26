@@ -99,13 +99,13 @@ module.exports = {
 
                     const antichannel = new MessageEmbed()
                         .setTitle(`Configuré les salons temporaires`)
-                        .setDescription("**Séléctionner l'option qui vous correspond**")
+                        .setDescription("**Sélectionner l'option qui vous correspond**")
                         .setColor(color)
                         .setImage('https://cdn.discordapp.com/attachments/904084986536276059/1003966590867472525/2022-08-02_11-59-40.gif')
 
                     const antichanneldelete = new MessageEmbed()
-                        .setTitle(`Séléctionner l'option qui vous correspond`)
-                        .setDescription("**Séléctionner l'option qui vous correspond**")
+                        .setTitle(`Sélectionner l'option qui vous correspond`)
+                        .setDescription("**Sélectionner l'option qui vous correspond**")
                         .setColor(color)
                         .setImage('https://cdn.discordapp.com/attachments/904084986536276059/1003966590867472525/2022-08-02_11-59-40.gif')
 

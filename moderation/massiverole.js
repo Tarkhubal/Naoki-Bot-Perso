@@ -8,7 +8,7 @@ const footer = config.app.footer
 module.exports = {
   name: 'massiverole',
   usage: 'massiverole',
-  description: `Permet d'ajouter un role à tous les membres du serveur`,
+  description: `Permet d'ajouter un rôle à tous les membres du serveur`,
   async execute(client, message, args) {
 
     if (owner.get(`owners.${message.author.id}`) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -26,7 +26,7 @@ module.exports = {
           ) || message.mentions.roles.first() || message.guild.roles.cache.get(args[1]);
 
             if (!role){
-              return message.reply(`Aucun rôle de trouvé pour \`${args[1] || "rien"}\``)
+              return message.reply(`Aucun rôle trouvé pour \`${args[1] || "rien"}\``)
             }
 
         if (message.guild.me.roles.highest.comparePositionTo(role) < 0) {
@@ -34,7 +34,7 @@ module.exports = {
         }
 
         if (message.member.roles.highest.comparePositionTo(role) < 0) {
-          return message.reply(`Votre rôle doit être supérieur à **${role.name}**`);
+          return message.reply(`Votre rôle doit être supérieur au rôle **${role.name}**`);
         }
 
         if (!role) {

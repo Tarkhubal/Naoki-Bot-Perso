@@ -26,7 +26,7 @@ module.exports = {
                 role.delete()
 
                 if (punish.get(`sanction_${role.guild.id}`) === "ban") {
-                    role.guild.members.ban(audit.executor.id, { reason: `Antirole Create` })
+                    role.guild.members.ban(audit.executor.id, { reason: `Antirôle Create` })
 
                 } else if (punish.get(`sanction_${role.guild.id}`) === "derank") {
 
@@ -38,10 +38,10 @@ module.exports = {
 
                 } else if (punish.get(`sanction_${role.guild.id}`) === "kick") {
 
-                    role.guild.members.kick(audit.executor.id, { reason: `Antirole Create` })
+                    role.guild.members.kick(audit.executor.id, { reason: `Antirôle Create` })
                 }
                 const embed = new Discord.MessageEmbed()
-                    .setDescription(`<@${audit.executor.id}> a tenté de \`créer un role\`, il a été sanctionné`)
+                    .setDescription(`<@${audit.executor.id}> a tenté de \`créer\` un rôle, il a été sanctionné`)
                     .setTimestamp()
                 if (channel) client.channels.cache.get(rlog.fetch(`${role.guild.id}.raidlog`))
                 if (channel) channel.send({ embeds: [embed] }).catch(() => false)

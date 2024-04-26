@@ -61,11 +61,11 @@ module.exports = {
         if (owner.get(`owners.${message.author.id}`) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
 
             const embed = new Discord.MessageEmbed()
-                .addField(`Configuration du serveur`, `${emote.administration.alerte} | Salon d'alerte : <#${alerte}> \n${emote.administration.ping} | Role alerte : ${role}\n📧 | Catégorie tickets : \`${ticket}\`\n${emote.administration.rainbowheart} | Thème : ${color}`)
-                .addField(`Configuration Logs`, `${e} | Logs Messages : ${messagelog}\n${e} | Logs Mods : ${modlog}\n${e} | Logs Boosts : ${boostlog}\n${e} | Logs Tickets : ${ticketlog} \n${e} | Logs Embeds : ${embedlog}\n${e} | Logs Raid : ${raidlog}`)
+                .addField(`Configuration du serveur`, `${emote.administration.alerte} | Salon d'alerte : <#${alerte}> \n${emote.administration.ping} | Rôle alerte : ${role}\n📧 | Catégorie tickets : \`${ticket}\`\n${emote.administration.rainbowheart} | Thème : ${color}`)
+                .addField(`Configuration des logs`, `${e} | Logs Messages : ${messagelog}\n${e} | Logs Mods : ${modlog}\n${e} | Logs Boosts : ${boostlog}\n${e} | Logs Tickets : ${ticketlog} \n${e} | Logs Embeds : ${embedlog}\n${e} | Logs Raid : ${raidlog}`)
                 .addField(`Prefix : \`${pf}\``, `\`${pf}help\` pour obtenir la liste des commandes`)
                 .addField(`Latence du bot`, `${emote.administration.typing} | Ping : **${client.ws.ping}ms**`)
-                .addField(`Info :`, `${emote.administration.devbadge} | Développeur : <@!843204602686078976>\n${emote.utilitaire.blackcrown} | Propriètaire : <@${config.app.owners}>\n[Support](https://discord.gg/nANSkCyehT)`)
+                .addField(`Info :`, `${emote.administration.devbadge} | Développeur : <@!843204602686078976>\n${emote.utilitaire.blackcrown} | Propriétaire : <@${config.app.owners}>\n[Support](https://discord.gg/nANSkCyehT)`)
                 .setColor(color)
 
             message.channel.send({ embeds: [embed] })

@@ -38,7 +38,7 @@ module.exports = {
 
             let reason = args.slice(1).join(" ") || `Aucune raison`
 
-            message.reply({ content: `${member} à été banni du serveur` }).catch(err => err)
+            message.reply({ content: `${member} a été banni du serveur` }).catch(err => err)
             member.send({ content: `Tu as été banni par ${message.author} pour la raison suivante: \n\n ${reason}` })
             member.ban({ reason: `${reason}` })
 
@@ -64,16 +64,16 @@ module.exports = {
             }
 
             if (member.roles.highest.position >= message.member.roles.highest.position || message.author.id !== message.guild.owner.id) {
-                return message.reply(`Vous ne pouvez pas ban un membre au dessus de vous`)
+                return message.reply(`Vous ne pouvez pas bannir un membre au dessus de vous`)
             }
 
             
             if (owner.get(`owners.${message.author.id}`) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true)
-             return  message.reply("Tu ne peux pas le bannir !")
+             return  message.reply("Tu ne peux pas le bannir ! Il est owner du bot.")
              
             let reason = args.slice(1).join(" ") || `Aucune raison`
 
-            message.reply({ content: `${member} à été banni du serveur` }).catch(err => err)
+            message.reply({ content: `${member} a été banni du serveur` }).catch(err => err)
             member.send({ content: `Tu as été banni par ${message.author} pour la raison suivante: \n\n ${reason}` })
             member.ban({ reason: `${reason}` })
 

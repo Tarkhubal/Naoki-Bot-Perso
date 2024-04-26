@@ -11,7 +11,7 @@ const footer = config.app.footer
 module.exports = {
     name: 'alerte',
     usage: 'alerte',
-    description: `Permet de configuré les alertes.`,
+    description: `Permet de configurer les alertes.`,
     async execute(client, message, args) {
 
         if (owner.get(`owners.${message.author.id}`) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -66,7 +66,7 @@ module.exports = {
                             emoji: '957097615147810956',
                         },
                         {
-                            label: 'Role',
+                            label: 'Rôle',
                             value: 'role',
                             emoji: '963584426787340348',
                         },
@@ -82,7 +82,7 @@ module.exports = {
 
                 //Ping admin
                 const adminpingembed = new Discord.MessageEmbed()
-                    .setDescription(`**Voulez vous prévenir les owners lorsqu'une permission __Administrateur__ sera ajoutée ?**`)
+                    .setDescription(`**Voulez vous prévenir les owners lorsqu'une permission __Administrateur__ est ajoutée ?**`)
                     .setColor(color)
 
                 const adminpingrow = new Discord.MessageActionRow().addComponents(
@@ -110,7 +110,7 @@ module.exports = {
 
                 //Ping ban
                 const banpingembed = new Discord.MessageEmbed()
-                    .setDescription(`**Voulez vous prévenir les owners lorsqu'une permission __Bannir des membres__ sera ajoutée ?**`)
+                    .setDescription(`**Voulez vous prévenir les owners lorsqu'une permission __Bannir des membres__ est ajoutée ?**`)
                     .setColor(color)
 
                 const banpingrow = new Discord.MessageActionRow().addComponents(
@@ -139,7 +139,7 @@ module.exports = {
 
                 //Ping role
                 const rolepingembed = new Discord.MessageEmbed()
-                    .setDescription(`**Voulez vous prévenir les owners lorsqu'une permission __Gérer les roles__ sera ajoutée ?**`)
+                    .setDescription(`**Voulez vous prévenir les owners lorsqu'une permission __Gérer les roles__ est ajoutée ?**`)
                     .setColor(color)
 
                 const rolepingrow = new Discord.MessageActionRow().addComponents(
@@ -180,7 +180,7 @@ module.exports = {
                         db.set(`adminping_${message.guild.id}`, true)
                         db.set(`banping_${message.guild.id}`, true)
                         db.set(`roleping_${message.guild.id}`, true)
-                        msg.channel.send({ content: `Les ajouts de roles contenant la permission \`Admin\`, \`Ban\`, \`Role\` seront désormais ping dans le salon d'arlerte` }).then(msg => {
+                        msg.channel.send({ content: `Les ajouts de rôles contenant la permission \`Admin\`, \`Ban\`, \`Role\` seront désormais ping dans le salon d'alerte` }).then(msg => {
                             setTimeout(() => msg.delete(), 7000)
                         })
                     }
@@ -191,7 +191,7 @@ module.exports = {
                         db.set(`adminping_${message.guild.id}`, false)
                         db.set(`banping_${message.guild.id}`, false)
                         db.set(`roleping_${message.guild.id}`, false)
-                        msg.channel.send({ content: `Toutes les alertes ont étaient désactivées` }).then(msg => {
+                        msg.channel.send({ content: `Toutes les alertes ont été désactivées` }).then(msg => {
                             setTimeout(() => msg.delete(), 7000)
                         })
                     }
@@ -210,7 +210,7 @@ module.exports = {
                     if (value === "admon") {
 
                         db.set(`adminping_${message.guild.id}`, true)
-                        msg.channel.send({ content: `Les ajouts de roles contenant la permission \`Admin\` seront désormais ping dans le salon d'arlerte` }).then(msg => {
+                        msg.channel.send({ content: `Les ajouts de rôles contenant la permission \`Admin\` seront désormais ping dans le salon d'alerte` }).then(msg => {
                             setTimeout(() => msg.delete(), 6000)
                         })
                         msg.edit({ embeds: [embed], components: [panelselect] })
@@ -233,7 +233,7 @@ module.exports = {
                     if (value === "banon") {
 
                         db.set(`banping_${message.guild.id}`, true)
-                        msg.channel.send({ content: `Les ajouts de roles contenant la permission \`Bannir des membres\` seront désormais ping dans le salon d'arlerte` }).then(msg => {
+                        msg.channel.send({ content: `Les ajouts de rôles contenant la permission \`Bannir des membres\` seront désormais ping dans le salon d'alerte` }).then(msg => {
                             setTimeout(() => msg.delete(), 6000)
                         })
                         msg.edit({ embeds: [embed], components: [panelselect] })
@@ -256,7 +256,7 @@ module.exports = {
                     if (value === "roleon") {
 
                         db.set(`roleping_${message.guild.id}`, true)
-                        msg.channel.send({ content: `Les ajouts de roles contenant la permission \`Role\` seront désormais ping dans le salon d'arlerte` }).then(msg => {
+                        msg.channel.send({ content: `Les ajouts de rôles contenant la permission \`Role\` seront désormais ping dans le salon d'alerte` }).then(msg => {
                             setTimeout(() => msg.delete(), 6000)
                         })
                         msg.edit({ embeds: [embed], components: [panelselect] })

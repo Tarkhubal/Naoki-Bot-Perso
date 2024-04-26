@@ -9,7 +9,7 @@ const p3 = new db.table("Perm3")
 module.exports = {
     name: 'rlist',
     usage: 'rlist',
-    description: `Permet d'afficher la liste des perm roles présent sur le serveur.`,
+    description: `Permet d'afficher la liste des perm rôles présents sur le serveur.`,
     async execute(client, message, args) {
 
         const perm2 = p2.fetch(`perm2_${message.guild.id}`)
@@ -26,7 +26,7 @@ module.exports = {
                 const str_content = str_map.substring(i, Math.min(str_map.length, i + 1995));
 
                 const embed = new Discord.MessageEmbed()
-                    .setTitle(`Liste des perm Roles`)
+                    .setTitle(`Liste des perms rôles`)
                     .setDescription(`\n ${str_content}`)
                     .setFooter({ text: `Total: ${str_filtrer.size}` })
                     .setColor(color)
@@ -34,7 +34,7 @@ module.exports = {
             }
 
             const embed = new Discord.MessageEmbed()
-                    .setTitle(`Liste des perm Roles`)
+                    .setTitle(`Liste des perms rôles`)
                     .setDescription(` `)
                     .setFooter({ text: `Total: 0` })
                     .setColor(color)

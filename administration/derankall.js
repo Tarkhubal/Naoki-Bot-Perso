@@ -64,8 +64,8 @@ module.exports = {
 
             const alert = new Discord.MessageEmbed()
                 .setColor(color)
-                .setTitle(`${message.author.tag} à effectué un derank all`)
-                .setDescription(`${emote.owner.abus} Toutes les personnes possédant des permissions **Dangereuses** ont étaient derank\n Executeur : <@${message.author.id}>`)
+                .setTitle(`${message.author.tag} a effectué un derank all`)
+                .setDescription(`${emote.owner.abus} Toutes les personnes possédant des permissions **dangereuses** ont été derank\nExécuteur : <@${message.author.id}>`)
                 .setTimestamp()
                 .setFooter({ text: `⚠️ ${footer}` })
             const logchannel = client.channels.cache.get(channellogs)

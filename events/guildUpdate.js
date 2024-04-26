@@ -46,7 +46,7 @@ module.exports = {
                 }
 
                 const embed = new Discord.MessageEmbed()
-                embed.setDescription(`${action.executor} a apporter des \`modifications au serveur\`, **il a été sanctionné**`)
+                embed.setDescription(`${action.executor} a apporté des \`modifications au serveur\`, **il a été sanctionné**`)
                 embed.setColor(color)
 
                 const channel = client.channels.cache.get(rlog.fetch(`${guild.id}.raidlog`))

@@ -21,12 +21,12 @@ module.exports = {
             if (!role) return message.reply(`Veuillez mentionner un rôle.`)
             if (!msg) return message.reply(`Veuillez préciser la description.`)
             if (role.permissions.has("KICK_MEMBERS") || role.permissions.has("BAN_MEMBERS") || role.permissions.has("MANAGE_WEBHOOKS") || role.permissions.has("ADMINISTRATOR") || role.permissions.has("MANAGE_CHANNELS") || role.permissions.has("MANAGE_GUILD") || role.permissions.has("MENTION_EVERYONE") || role.permissions.has("MANAGE_ROLES")) {
-                return message.reply("Le Menu n'a pas pu etre créer car le role séléctionné contient des permissions **Dangereuses**")
+                return message.reply("Le menu n'a pas pu être créé car le rôle sélectionné a des permissions **dangereuses**")
             }
 
             const embed = new Discord.MessageEmbed()
-                .setTitle(`Prends ton role`)
-                .setDescription(`${msg}\n__Role :__ ${role}`)
+                .setTitle(`Choisi ton rôle`)
+                .setDescription(`${msg}\n__Rôle :__ ${role}`)
                 .setColor(color)
 
 

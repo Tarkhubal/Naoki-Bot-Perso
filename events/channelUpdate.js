@@ -49,7 +49,7 @@ module.exports = {
                     oldChannel.guild.members.kick(audit.executor.id, { reason: `AntiChannel Update` })
                 }
                 const embed = new Discord.MessageEmbed()
-                    .setDescription(`<@${audit.executor.id}> a tenté de \`modifié\` un salon, il a été sanctionné`)
+                    .setDescription(`<@${audit.executor.id}> a tenté de \`modifier\` un salon, il a été sanctionné.`)
                     .setTimestamp()
                 const channel = client.channels.cache.get(rlog.fetch(`${oldChannel.guild.id}.raidlog`))
                 if (channel) channel.send({ embeds: [embed] }).catch(() => false)

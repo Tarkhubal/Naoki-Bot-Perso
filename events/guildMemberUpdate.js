@@ -49,8 +49,8 @@ module.exports = {
 
                         const embed = new Discord.MessageEmbed()
                             .setAuthor({ name: `Permission Admin détectée [Danger]`, iconURL: newMember.user.displayAvatarURL({ dynamic: true }) })
-                            .setTitle(`Une perm admin à été ajoutée`)
-                            .setDescription(`Executeur : ${executor} \n Membre : ${oldMember}\n Rôle : <@&${newroles.map(r => r.id).join(">, <@&")}>`)
+                            .setTitle(`Une perm admin a été ajoutée`)
+                            .setDescription(`Exécuteur : ${executor}\nMembre : ${oldMember}\n Rôle : <@&${newroles.map(r => r.id).join(">, <@&")}>`)
                             .setTimestamp()
                             .setFooter({ text: `⚠️` })
                             .setColor(color)
@@ -112,7 +112,7 @@ module.exports = {
                         oldMember.guild.members.kick(audit.executor.id, { reason: `Anti Admin` })
                     }
                     const embed = new Discord.MessageEmbed()
-                        .setDescription(`<@${audit.executor.id}> a tenté d'ajouté un role possédant une \`perm admin\` a <@${newMember.id}>, ils ont été sanctionné`)
+                        .setDescription(`<@${audit.executor.id}> a tenté d'ajouter un rôle possédant une \`perm admin\` a <@${newMember.id}>, ils ont été sanctionné`)
                         .setTimestamp()
                     const channel = client.channels.cache.get(rlog.fetch(`${oldMember.guild.id}.raidlog`))
                     if (channel) channel.send({ embeds: [embed] }).catch(() => false)
@@ -137,8 +137,8 @@ module.exports = {
 
                     const embed = new Discord.MessageEmbed()
                         .setAuthor({ name: `Permission Ban détectée [Danger]`, iconURL: newMember.user.displayAvatarURL({ dynamic: true }) })
-                        .setTitle(`Une perm Ban à été ajoutée`)
-                        .setDescription(`Executeur : ${executor} \n Membre : ${oldMember}\nRôle : <@&${newroles.map(r => r.id).join(">, <@&")}>`)
+                        .setTitle(`Une perm Ban a été ajoutée`)
+                        .setDescription(`Exécuteur : ${executor}\nMembre : ${oldMember}\nRôle : <@&${newroles.map(r => r.id).join(">, <@&")}>`)
                         .setTimestamp()
                         .setFooter({ text: `⚠️` })
                         .setColor(color)
@@ -164,8 +164,8 @@ module.exports = {
 
                     const embed = new Discord.MessageEmbed()
                         .setAuthor({ name: `Permission role détectée [Danger]`, iconURL: newMember.user.displayAvatarURL({ dynamic: true }) })
-                        .setTitle(`Une perm role à été ajoutée`)
-                        .setDescription(`Executeur : ${executor} \n Membre : ${oldMember}\n Rôle : <@&${newroles.map(r => r.id).join(">, <@&")}>`)
+                        .setTitle(`Une perm rôle a été ajoutée`)
+                        .setDescription(`Exécuteur : ${executor}\nMembre : ${oldMember}\nRôle : <@&${newroles.map(r => r.id).join(">, <@&")}>`)
                         .setTimestamp()
                         .setFooter({ text: `⚠️` })
                         .setColor(color)

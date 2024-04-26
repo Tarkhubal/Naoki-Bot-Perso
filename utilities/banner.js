@@ -21,7 +21,7 @@ module.exports = {
 
         const ERRbannerEmbed = new Discord.MessageEmbed()
             .setColor(color)
-            .setTitle(`❌ Pas De Bannière ❌`)
+            .setTitle(`❌ Pas de bannière ❌`)
             .setDescription(`${member.user.tag} n'a pas de bannière !`)
         if (!url) return message.channel.send({ embeds: [ERRbannerEmbed] });
 

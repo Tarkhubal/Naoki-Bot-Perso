@@ -11,7 +11,7 @@ module.exports = {
     name: 'unwl',
     usage: 'unwl',
     category: "owner",
-    description: `Permet de gérer la wl du bot.`,
+    description: `Permet d'enlever quelqu'un de la liste blanche du bot.`,
     async execute(client, message, args) {
 
         if (owner.get(`owners.${message.author.id}`) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -32,10 +32,10 @@ module.exports = {
                 }
                 if (!member) return message.channel.send(`Aucun membre trouvé pour \`${args[0] || "rien"}\``)
                 if (!wl.get(`${message.guild.id}.${member.id}.wl`) === member.id) {
-                    return message.channel.send({ content: `__${member.username}__ n'est pas whitelist` })
+                    return message.channel.send({ content: `__${member.username}__ n'est pas dans la liste blanche` })
                 } else {
                     wl.set(`${message.guild.id}.${member.id}.wl`, false)
-                    message.channel.send({ content: `**__${member.username}__** n'est plus whitelist` })
+                    message.channel.send({ content: `**__${member.username}__** n'est plus dans la liste blanche` })
                 }
             }
         }

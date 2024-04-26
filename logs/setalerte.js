@@ -28,8 +28,8 @@ module.exports = {
                 message.channel.send(`${emotes.owner.alert}・__Nouveau salon d'alerte :__ ${args[0]}`)
 
                 const embed = new Discord.MessageEmbed()
-                    .setTitle(`${message.author.tag} à défini ce salon commme salon d'Alerte`)
-                    .setDescription(`${emotes.owner.iconsettings} Ce salon est désormais utilisé pour __toutes__ **les Alertes Permissions** du serveur\n Executeur : <@${message.author.id}>`)
+                    .setTitle(`${message.author.tag} a défini ce salon commme salon d'alerte`)
+                    .setDescription(`${emotes.owner.iconsettings} Ce salon est désormais utilisé pour __toutes__ **les alertes de permissions** du serveur\nExécuteur : <@${message.author.id}>`)
                     .setTimestamp()
                     .setFooter({ text: `${footer}` })
                 client.channels.cache.get(alerte.get(`${message.guild.id}.alerteperm`)).send({ embeds: [embed] }).catch(() => false)

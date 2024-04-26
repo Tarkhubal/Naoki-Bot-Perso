@@ -18,7 +18,7 @@ module.exports = {
 
         if (!args[0]) {
             return message.channel.send(
-                `Mentionne le membre à Pirater ${emote.games.hack}`
+                `Mentionne le membre à pirater ${emote.games.hack}`
             );
         }
         const tohack = message.mentions.members.first();
@@ -26,12 +26,12 @@ module.exports = {
 
         let time = "1s";
         setTimeout(function () {
-            msg.edit(`Recherche de l'Email et Mot de Passe de ${tohack.displayName} .....`);
+            msg.edit(`Recherche de l'email et du mot de passe de ${tohack.displayName} .....`);
         }, ms(time));
 
         let time1 = "6s";
         setTimeout(function () {
-            msg.edit(`E-Mail: ${tohack.displayName}@gmail.com \nPassword: \`********\``);
+            msg.edit(`E-Mail: ${tohack.displayName}@gmail.com \nMot de passe: \`********\``);
         }, ms(time1));
 
         let time2 = "9s";
@@ -56,7 +56,7 @@ module.exports = {
 
         let time6 = "31s";
         setTimeout(function () {
-            msg.edit("Récupération des Informations.....");
+            msg.edit("Récupération des informations.....");
         }, ms(time6));
 
         let time7 = "38s";

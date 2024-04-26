@@ -13,7 +13,7 @@ const footer = config.app.footer
 module.exports = {
     name: 'voiceunmute',
     usage: 'voiceunmute <@>',
-    description: `Permet de mute vocal un membre sur le serveur.`,
+    description: `Permet de ne plus mute un membre dans un salon vocal sur le serveur.`,
     async execute(client, message, args) {
 
         const perm1 = p1.fetch(`perm1_${message.guild.id}`)
@@ -30,7 +30,7 @@ module.exports = {
 
             if (!muteUser.voice.serverMute) {
                 return message.channel
-                    .send("Le membre n'est pas dans un salon vocal ou est déjà unmute vocal.")
+                    .send("Le membre n'est pas dans un salon vocal ou n'est déjà pas mute dans les salons vocaux.")
             }
 
             try {
@@ -43,7 +43,7 @@ module.exports = {
 
             try {
                 muteUser.user.send(
-                    `Vous avez été **unmute** sur **${message.guild.name}**, Raison: **${muteReason || "Aucune"}**.`
+                    `Vous **n'êtes plus muet** sur **${message.guild.name}**, raison: **${muteReason || "Aucune"}**.`
                 );
             } catch (err) {
                 console.err(err);
@@ -52,7 +52,7 @@ module.exports = {
             }
 
             message.channel.send(
-                `**${muteUser.user.tag}** a été unmute avec succès sur le serveur. Raison: **${muteReason || "Aucun"
+                `**${muteUser.user.tag}** n'est plus muet avec succès sur le serveur. Raison: **${muteReason || "Aucun"
                 }**. `
             )
 

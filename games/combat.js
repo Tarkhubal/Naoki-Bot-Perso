@@ -33,14 +33,14 @@ module.exports = {
                 accept: 'Accepter',
                 deny: 'Refuser'
             },
-            acceptMessage: '<@{{challenger}}> a défié <@{{opponent}}> pour un combat!',
+            acceptMessage: '<@{{challenger}}> a défié <@{{opponent}}> pour un combat !',
             winMessage: 'GG, <@{{winner}}> a gagné le combat !',
             endMessage: '<@{{opponent}}> n\'a pas répondu',
-            cancelMessage: '<@{{opponent}}> à refusé le combat',
-            fightMessage: '{{player}} tu y vas en premier !',
-            opponentsTurnMessage: 'Veuillez attendre que vos adversaires bougent!',
-            highHealthMessage: 'Vous ne pouvez pas guérir si vos PV sont supérieurs à 80!',
-            lowHealthMessage: 'Vous ne pouvez pas annuler le combat si vos PV sont inférieurs à 50!',
+            cancelMessage: '<@{{opponent}}> a refusé le combat',
+            fightMessage: '{{player}} tu commences !',
+            opponentsTurnMessage: 'Veuillez attendre que vos adversaires bougent !',
+            highHealthMessage: 'Vous ne pouvez pas vous guérir si vos PV sont supérieurs à 80 !',
+            lowHealthMessage: 'Vous ne pouvez pas arrêter le combat si vos PV sont inférieurs à 50 !',
             returnWinner: false,
             othersMessage: 'Seulement {{author}} peut utiliser ce bouton!'
         });

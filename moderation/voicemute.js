@@ -14,7 +14,7 @@ const footer = config.app.footer
 module.exports = {
     name: 'voicemute',
     usage: 'voicemute <@>',
-    description: `Permet de mute vocal un membre sur le serveur.`,
+    description: `Permet de rendre muet un membre dans un salon vocal sur le serveur.`,
     async execute(client, message, args, member) {
 
         const perm1 = p1.fetch(`perm1_${message.guild.id}`)
@@ -36,7 +36,7 @@ module.exports = {
 
             if (muteUser.voice.serverMute) {
                 return message.channel
-                    .send("Le membre n'est pas dans un salon vocal ou est déjà mute vocal.")
+                    .send("Le membre n'est pas dans un salon vocal ou est déjà muet dans le salon vocal.")
             }
 
             try {
@@ -49,7 +49,7 @@ module.exports = {
 
             try {
                 muteUser.user.send(
-                    `Vous avez été **Mute** sur **${message.guild.name}**, Raison: **${muteReason || "Aucune"}**.`
+                    `Vous avez été **mute** sur **${message.guild.name}**, raison: **${muteReason || "Aucune"}**.`
                 );
             } catch (err) {
                 console.err(err);
@@ -57,8 +57,7 @@ module.exports = {
             }
 
             message.channel.send(
-                `**${muteUser.user.tag}** a été mute avec succès sur le serveur. Raison: **${muteReason || "Aucune"
-                }**. `
+                `**${muteUser.user.tag}** a été mute avec succès sur le serveur. Raison: **${muteReason || "Aucune"}**. `
             )
 
             let color = cl.fetch(`color_${message.guild.id}`)

@@ -16,7 +16,6 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             .setColor(color)
             .setDescription(`
-        
 **\`antiadmin | Owner\`**
 **\`antiban | Owner\`**
 **\`antiupdate | Owner\`**
@@ -26,12 +25,11 @@ module.exports = {
 **\`antichannel create | Owner | Wl\`**
 **\`antichannel delete | Owner\`**
 **\`antichannel update | Owner\`**
-**\`antirole create | Owner\`**
-**\`antirole delete | Owner\`**
-**\`antirole update | Owner\`**
+**\`antirôle create | Owner\`**
+**\`antirôle delete | Owner\`**
+**\`antirôle update | Owner\`**
 **\`antiwebhook | Owner\`**
-        
-        `)
+`)
 
         message.channel.send({ embeds: [embed] });
     }

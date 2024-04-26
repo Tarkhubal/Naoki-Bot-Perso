@@ -44,7 +44,7 @@ module.exports = {
                 let list = message.guild.members.cache.filter(u => owner.get(`owners.${u.id}`) === u.id).map(a => "<@" + a.user.id + ">")
 
                 const embed = new Discord.MessageEmbed()
-                    .setTitle("liste des Owners")
+                    .setTitle("Liste des Owners")
                     .setDescription(list.join("\n"))
                     .setColor(color)
                     .setFooter({ text: `${footer}` })

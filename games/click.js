@@ -28,14 +28,12 @@ module.exports = {
                 timestamp: true
             },
             time: 60000,
-            waitMessage: 'Les boutons peuvent apparaître à tout moment',
-            startMessage:
-                'La première personne à appuyer sur le bon bouton gagnera. Tu as **{{time}}**!',
-            winMessage: 'GG, <@{{winner}}> a appuyé sur le bouton dans **{{time}} secondes**.',
-            loseMessage: 'Personne n\'a appuyé sur le bouton à temps. Alors',
+            waitMessage: 'Le bouton peuvent apparaître à tout moment',
+            startMessage: 'La première personne à appuyer sur le bon bouton gagne. Tu as **{{time}}**!',
+            winMessage: 'GG, <@{{winner}}> a appuyé sur le bouton en **{{time}} secondes**.',
+            loseMessage: 'Personne n\'a appuyé sur le bouton à temps.',
             emoji: '🎁',
-            ongoingMessage:
-                "Un jeu est déjà en cours dans <#{{channel}}>"
+            ongoingMessage: "Un jeu est déjà en cours dans <#{{channel}}>"
         });
     }
 }

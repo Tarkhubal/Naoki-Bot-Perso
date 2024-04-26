@@ -9,7 +9,7 @@ module.exports = {
     once: true,
 
     async execute(client) {
-        console.log(`${client.user.username} connécté`)
+        console.log(`${client.user.username} connecté`)
         console.log(
             `Client Id: ${client.user.id}\n`
             + `Invite: https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=0`

@@ -10,7 +10,7 @@ const emote = require('../emotes.json')
 module.exports = {
     name: 'pwebhooks',
     usage: 'pwebhooks',
-    description: `Permet de Désactive toutes les permissions webhooks du serveur.`,
+    description: `Permet de désactiver toutes les permissions webhooks du serveur.`,
     async execute(client, message, args) {
 
         if (owner.get(`owners.${message.author.id}`) || message.member.roles.cache.has(pgp.fetch(`permgp_${message.guild.id}`)) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -22,7 +22,7 @@ module.exports = {
             roles.forEach(role => role.setPermissions(role.permissions.remove(["MANAGE_WEBHOOKS"])).catch(() => { }))
 
             const permEmbed = new Discord.MessageEmbed()
-                .setDescription('**Je désactive les permissions WEBHOOKS à tous les rôles.**')
+                .setDescription('**Je désactive les permissions __WEBHOOKS__ à tous les rôles.**')
                 .setColor(color)
 
             message.channel.send({ embeds: [permEmbed] })
@@ -32,8 +32,8 @@ module.exports = {
             if (roleping === null) roleping = "@everyone"
 
             const embed = new Discord.MessageEmbed()
-                .setTitle(`${message.author.tag} à désactivé toutes les __permissions webhooks__ du serveur`)
-                .setDescription(`${emote.administration.loading} Merci de patienter avant de réactiver les permissions le temps que le problème soit réglé\n Executeur : <@${message.author.id}>`)
+                .setTitle(`${message.author.tag} a désactivé toutes les __permissions webhooks__ du serveur`)
+                .setDescription(`${emote.administration.loading} Merci de patienter avant de réactiver les permissions le temps que le problème soit réglé\nExécuteur : <@${message.author.id}>`)
                 .setTimestamp()
                 .setColor(color)
                 .setFooter({ text: `📚` })

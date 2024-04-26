@@ -11,7 +11,7 @@ module.exports = {
     name: 'pkick',
     usage: 'pkick',
     category: "owner",
-    description: `Permet de Désactive toutes les permissions ban du serveur.`,
+    description: `Permet de désactiver toutes les permissions ban du serveur.`,
     async execute(client, message, args) {
 
         if (owner.get(`owners.${message.author.id}`) || message.member.roles.cache.has(pgp.fetch(`permgp_${message.guild.id}`)) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -34,8 +34,8 @@ module.exports = {
 
             const embed = new Discord.MessageEmbed()
                 .setColor(color)
-                .setTitle(`${message.author.tag} à désactivé toutes les __permissions kick__ du serveur`)
-                .setDescription(`${emote.administration.loading} Merci de patienter avant de réactiver les permissions le temps que le problème soit réglé\n Executeur : <@${message.author.id}>`)
+                .setTitle(`${message.author.tag} a désactivé toutes les __permissions kick__ du serveur`)
+                .setDescription(`${emote.administration.loading} Merci de patienter avant de réactiver les permissions le temps que le problème soit réglé\nExécuteur : <@${message.author.id}>`)
                 .setTimestamp()
                 .setFooter({ text: `📚` })
             client.channels.cache.get(channellogs).send({ content: `${roleping}`, embeds: [embed] }).catch(() => false)

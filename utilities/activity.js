@@ -19,7 +19,7 @@ module.exports = {
         if (pf == null) pf = config.app.px
 
         client.discordTogether = new DiscordTogether(client);
-        if (!message.member.voice.channel) return message.reply(`Vous n'êtes pas connecté a un salon Vocal !\n Vous ne pouvez pas jouer sans etre en vocal :(`)
+        if (!message.member.voice.channel) return message.reply(`Vous n'êtes pas connecté a un salon vocal !\nVous ne pouvez pas jouer sans être en vocal :(`)
         const base = new Discord.MessageActionRow()
             .addComponents(
                 new Discord.MessageSelectMenu()
@@ -102,7 +102,7 @@ module.exports = {
         const embedbase = new Discord.MessageEmbed()
             .setColor(color)
             .setDescription(`
-**Activity !** Veuillez choisir une option d'activié via le SelectMennu ci-dessous !
+**Activity !** Veuillez choisir une option d'activité via le menu déroulant ci-dessous !
 `)
             .setFooter({ text: `Prefix actuel : ${pf}` })
         message.reply({ embeds: [embedbase], components: [base] }).then(async msg => {

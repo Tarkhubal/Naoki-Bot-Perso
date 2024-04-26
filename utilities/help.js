@@ -100,7 +100,7 @@ module.exports = {
 
             const embed = new Discord.MessageEmbed()
                 .setTitle(`Arguments de messages`)
-                .setDescription(`Exemple de message simple: \`{MemberMention} nous a rejoint,  nous sommes maintenant {MemberCount} sur {Server}\``)
+                .setDescription(`Exemple de message simple: \`{MemberMention} nous a rejoins, nous sommes maintenant {MemberCount} sur {Server}\``)
                 .addFields(
                     { name: '{MemberName}', value: 'Le nom du membre concerné\n`Exemple: Funny`', inline: true },
                     { name: '{MemberMention}', value: `Mentionne le membre concerné\n\`Exemple:\` <@${message.author.id}>`, inline: true },
@@ -108,11 +108,11 @@ module.exports = {
                 )
                 .addFields(
                     { name: '{MemberID}', value: `L'ID du membre concerné\n\`Exemple: ${message.author.id}\``, inline: true },
-                    { name: '{MemberCount}', value: `Le nombre total de membres sur le serveurn\n\`Exemple: ${message.guild.memberCount}\``, inline: true },
+                    { name: '{MemberCount}', value: `Le nombre total de membres sur le serveur\n\`Exemple: ${message.guild.memberCount}\``, inline: true },
                     { name: '{Server}', value: `Le nom du serveur\n\`Exemple: ${message.guild.name}\``, inline: true },
                 )
                 .addFields(
-                    { name: '{ServerBoostsCount}', value: `Le nombre de boost du serveur\n\`Exemple: ${message.guild.premiumSubscriptionCount || '0'}\``, inline: true },
+                    { name: '{ServerBoostsCount}', value: `Le nombre de boosts du serveur\n\`Exemple: ${message.guild.premiumSubscriptionCount || '0'}\``, inline: true },
                     { name: '{ServerLevel}', value: `Le niveau actuel du serveur\n\`Exemple: ${premiumTier[message.guild.premiumTier]}\``, inline: true },
                     { name: '{VocalMembersCount}', value: `Le nombre total de membres en vocal sur le serveur\n\`Exemple: ${message.guild.members.cache.filter(m => m.voice.channel).size}\``, inline: true },
                 )
@@ -135,7 +135,7 @@ module.exports = {
             //Embed Help
 
             const help = new Discord.MessageEmbed()
-                .setTitle(`🎋・Panel d'aide Permissions ${client.user.username}`)
+                .setTitle(`🎋・Panel d'aide permissions ${client.user.username}`)
                 .setDescription(`${emote.utilitaire.coin}・Ce bot appartient à <@${config.app.owners}>`)
                 .setImage(imgperm)
                 .setColor(color)
@@ -308,9 +308,9 @@ Permission Gestion Permissions
     **\`${pf}antichannel create on/off\`**
     **\`${pf}antichannel delete on/off\`**
     **\`${pf}antichannel update on/off\`**
-    **\`${pf}antirole create on/off\`**
-    **\`${pf}antirole delete on/off\`**
-    **\`${pf}antirole update on/off\`**
+    **\`${pf}antirôle create on/off\`**
+    **\`${pf}antirôle delete on/off\`**
+    **\`${pf}antirôle update on/off\`**
     **\`${pf}antiwebhook on/off\`**
     **\`${pf}server lock/unlock\`**
     **\`${pf}secur\`**
@@ -434,7 +434,7 @@ Permission Gestion Permissions
                     .addOptions([
                         {
                             label: 'Accueil',
-                            value: 'accueille',
+                            value: 'accueil',
                             emoji: '998562005155860510',
                         },
                         {
@@ -518,22 +518,22 @@ Owner bot
 \`\`\`
 
 **\`${pf}setalerte [ID]\`**
-Permet de mettre en place un salon d'alerte lorsqu'une permission administrateur sera ajouté à un membre
+Permet de mettre en place un salon d'alerte lorsqu'une permission administrateur est ajoutée à un membre
 
 **\`${pf}alerte\`**
-Permet de choisir les perms pour les quels il faudra ping dans le salon alerte
+Permet de choisir les permissions pour lesquels il faudra ping dans le salon alerte
 
 **\`${pf}alerteping [@]\`**
-Permet de choisir quel role sera mentionner lors de alertes permissions administrateurs
+Permet de choisir quel rôle sera mentionné en cas d'alertes permissions administrateurs
 
 **\`${pf}soutien\`**
-Permet de choisir un role et un statut de soutien afin de récompenser les membres qui ont le statut
+Permet de choisir un rôle et un statut de soutien afin de récompenser les membres qui ont le statut
 
 **\`${pf}imghelp [lien]\`**
-Permet de choisir quelle image/gif sera affiché dans l'accueil du help
+Permet de choisir quelle gif/image sera affiché dans l'accueil du help
 
 **\`${pf}muterole\`**
-Met en place un role muet sur le serveur
+Met en place un rôle muet sur le serveur
 
 **\`${pf}wl/unwl\`**
 Permet de gérer la whitelist du bot
@@ -545,34 +545,33 @@ Recupère tous les messages d'un salon
 Permet de créer un système de ticket personnalisé sur le serveur
 
 **\`${pf}ticketset\`**
-Créer un système ticket pré défini
+Créer un système ticket pré-défini
 
 **\`${pf}permticket\`**
-Permet de configuré un role qui aura accès aux tickets
+Permet de configurer un rôle qui aura accès aux tickets
 
 **\`${pf}setcategorie\`**
-Permet de séléctionner la catégorie ou seront ouvert les tickets
+Permet de sélectionner la catégorie où seront ouvert les tickets
 
 **\`${pf}massiverole add/remove\`**
-Donne ou retire un role à tous les membres du serveur
+Donne ou retire un rôle à tous les membres du serveur
 
 **\`${pf}derankall\`**
-Derank toutes les personnes ayant des Permissions Dangereuses sur le serveur
+Derank toutes les personnes ayant des permissions dangereuses sur le serveur
 
 **\`${pf}embed\`**
-Créer un embed grace à l'embed builder
+Créer un embed grâce à l'embed builder
 
 **\`${pf}buttonrole <role> <description>\`**
-Créer un embed pour que les gens puissent cliqué pour avoir un role
+Créer un embed pour que les gens puissent cliquer pour avoir un rôle
 
 **\`${pf}prefix\`**
 Change le prefix du bot
 
 **\`${pf}dero <@role>\`**
-Permet de configuré un role avec un maximum de dérogations pour les owners [Gérer les roles/Gérer les salons/Renommer des membres/etc]
-Cela permet d'éviter d'attribué des permissions administrateurs et les membres possédant ce role pourront avoir accès à 80% comme une perm admin
-Faites attention de ne quand meme pas attribué cette permission à n'importe quel role
-
+Permet de configurer un rôle avec un maximum de dérogations pour les owners [Gérer les rôles/Gérer les salons/Renommer des membres/etc]
+Cela permet d'éviter d'attribuer des permissions administrateurs. Les membres possédant ce rôle pourront avoir accès à 80% comme une permission administrateur.
+Faites attention de ne quand même pas attribuer cette permission à n'importe quel rôle.
           `)
                 .setFooter({ text: `${footer} | Prefix actuel : ${pf}` })
                 .setColor(color)
@@ -591,60 +590,58 @@ Owner bot partie 2
 Change le statut du bot
                 
 **\`${pf}pfp\`**
-Permet d'activé ou désactivé le mode pfps sur un salon
+Permet d'activer ou désactiver le mode pfps sur un salon
                 
 **\`${pf}mp\`**
 Permet d'envoyer un message privé à un membre via le bot
                 
 **\`${pf}theme\`**
-Permet de changer le theme couleur du bot
+Permet de changer le thème de couleur du bot
                 
 **\`${pf}punition derank/kick/ban\`**
-Permet de choisir la punition qui sera éxécuté lors des raid
+Permet de choisir la punition qui sera appliquée lors d'un raid
                 
 **\`${pf}bl/unbl\`**
 Permet de gérer la blacklist
                 
 **\`${pf}perm list\`**
-Affiche la configuration des perms configurés sur le serveur
+Affiche la configuration des permissions configurées sur le serveur
                 
 **\`${pf}set/del perm1/2/3/gs/gp/ga <role>\`**
-Permet de configurer le niveau de permission associé à un role
-                
+Permet de configurer le niveau de permissions associées à un rôle
+
 **\`${pf}say <message>\`**
-Faire parler de bot dans un salon textuel
+Envoyer un message sous l'identité du bot dans un salon textuel
                 
 **\`${pf}lock all\`**
-Permet de fermé tous les salons du serveur
+Permet de verrouiller tous les salons du serveur
                 
 **\`${pf}unlock all\`**
-Permet de d'ouvrir tous les salons du serveur
+Permet de déverrouiller tous les salons du serveur
                 
 **\`${pf}join settings\`**
 Permet de configurer les paramètres du join settings
                 
 **\`${pf}join role <role>\`**
-Attribue un role automatiquement aux membres qui rejoignent le serveur
+Attribue automatiquement un rôle aux membres qui rejoignent le serveur
                 
 **\`${pf}join channel <#/ID>\`**
-Salon dans le quel seront envoyés les messages de bienvenue
+Salon dans lequel seront envoyés les messages de bienvenue
                 
 **\`${pf}tempvoc\`**
 Affiche un menu interactif pour gérer les vocaux temporaires sur le serveur
                 
 **\`${pf}antijoin add/remove <ID>\`**
-Empeche l'accès à un salon vocal sauf pour les membres vl/wl/owner
+Empêche l'accès à un salon vocal sauf pour les membres vl/wl/owner
                 
 **\`${pf}vl/unvl <@/ID>\`**
-Les membres vl seront autorisés à rejoindre les vocaux interdit
+Les membres vl seront autorisés à rejoindre les vocaux interdits
                 
 **\`${pf}blv/unblv/ <@/ID>\`**
 Blacklist vocal un membre du serveur, il ne pourra rejoindre aucun salon vocal
 
 **\`${pf}help settings\`**
 Change le format du help avec des boutons ou des menus
-
-
                 `)
                 .setFooter({ text: `${footer} | Prefix actuel : ${pf}` })
                 .setColor(color)
@@ -656,14 +653,14 @@ Change le format du help avec des boutons ou des menus
                 .setTitle("Gestion Permission")
                 .setDescription(`
  \`\`\`fix
- Permet de controler les permissions du serveur
+ Permet de contrôler les permissions du serveur
  \`\`\`
 
  **\`${pf}perm\`**
 Affiche les permissions d'un membre sur le serveur
 
 **\`${pf}gestion\`**
-Affiche les différents modules des gestion et leurs utilités
+Affiche les différents modules de gestion et leurs utilités
 
 **\`${pf}pall\`**
 Désactive __toutes les permissions__ du serveur 
@@ -672,7 +669,7 @@ Désactive __toutes les permissions__ du serveur
 Désactive toutes les permissions __administateur__ du serveur
 
 **\`${pf}prole\`**
-Désactive toutes les permissions __roles__ du serveur
+Désactive toutes les permissions __rôles__ du serveur
 
 **\`${pf}pban\`**
 Désactive toutes les permissions __ban__ du serveur
@@ -690,10 +687,10 @@ Désactive toutes les permissions __webhooks__ du serveur
 Désactive toutes les permissions __voir les salons__ du serveur
 
 **\`${pf}pserveur\`**
-Désactive toutes les permissions __Gérer le serveur__ du serveur
+Désactive toutes les permissions __gérer le serveur__ du serveur
 
 **\`${pf}peveryone\`**
-Désactive toutes les permissions __Everyone__ du serveur
+Désactive toutes les permissions __everyone__ du serveur
 
 `)
                 .setFooter({ text: `${footer} | Prefix actuel : ${pf}` })
@@ -714,13 +711,13 @@ Modération
 Affiche la liste des personnes ayant la permission __Administrateur__
 
 **\`${pf}botlist\`**
-Affiche la liste de tous les bots présent sur le serveur
+Affiche la liste de tous les bots présents sur le serveur
 
 **\`${pf}rlist\`**
-Affiche la liste des personnes ayant la permission __Gérer les roles__
+Affiche la liste des personnes ayant la permission __gérer les roles__
 
 **\`${pf}mute\`**
-Rends muet un membre
+Rend muet un membre
 
 **\`${pf}unmute\`**
 Redonne la parole un membre
@@ -729,25 +726,25 @@ Redonne la parole un membre
 Permet de créer un émoji sur le serveur
 
 **\`${pf}hide\`**
-Permet de cacher un salon
+Permet de masquer un salon
 
 **\`${pf}unhide\`**
-Permet de rendre visible un salon
+Permet de démasquer un salon
 
 **\`${pf}lock\`**
-Permet de fermé un salon
+Permet de verrouiller un salon
 
 **\`${pf}unlock\`**
-Permet d'ouvrir un salon
+Permet de déverrouiller un salon
 
 **\`${pf}config\`**
 Afficher la configuration du bot sur le serveur
 
 **\`${pf}addrole\`**
-Permet d'ajouter un role à un membre
+Permet d'ajouter un rôle à un membre
 
 **\`${pf}delrole\`**
-Retire un role à un membre
+Retire un rôle à un membre
 
 **\`${pf}annonce\`**
 Permet de faire une annonce de l'administration
@@ -762,7 +759,7 @@ Ban un membre du serveur
 Supprime 1 ou plusieurs messages
 
 **\`${pf}renew\`**
-Recrée un salon à l'identique
+Recréé un salon à l'identique
 
 **\`${pf}slowmode\`**
 Met en place un mode lent sur un salon
@@ -788,7 +785,6 @@ Unban tous les membres du serveur
             const Utilitaire = new Discord.MessageEmbed()
                 .setTitle("Utilitaire")
                 .setDescription(`
-          
 \`\`\`fix
 Commandes Public
 \`\`\`
@@ -796,7 +792,7 @@ Commandes Public
 Vous permet d'obtenir l'intégralité des commandes du bot et leurs informations
 
 **\`${pf}help all\`**
-Vous permet d'obtenir l'intégralité des commandes assignées aux role selons leurs niveaux de permissions
+Vous permet d'obtenir l'intégralité des commandes assignées aux rôles selon leurs niveaux de permissions
 
 **\`${pf}help msg\`**
 Affiche la totalité des variables messages
@@ -805,7 +801,7 @@ Affiche la totalité des variables messages
 Permet d'afficher le ping du bot
 
 **\`${pf}support\`**
-Si vous cherchez des bots personnalisé en tout genre notre rejoingnez notre support, si vous cherchez un devéloppeur pour des bots sur demande mp le développeur <@844105338386776094>
+Si vous cherchez des bots personnalisés en tout genre, rejoignez notre support, si vous cherchez un devéloppeur pour des bots sur demande mp le développeur <@844105338386776094>
 
 **\`${pf}avatar [id/mention]\`**
 Permet d'obtenir l'avatar d'un membre
@@ -817,13 +813,13 @@ Donne la bannière d'un membre
 Permet d'obtenir les informations du serveur
 
 **\`${pf}serveur pic\`**
-Donne la pp du serveur
+Donne la photo de profil du serveur
 
 **\`${pf}serveur banner\`**
 Donne la bannière du serveur
 
 **\`${pf}roleinfo [role]\`**
-Permet d'obtenir des informations sur un role
+Permet d'obtenir des informations sur un rôle
 
 **\`${pf}find [@/ID]\`**
 Cherche un membre en vocal sur le serveur
@@ -889,31 +885,28 @@ Permet de lancer une activitée dans votre salon vocal
 Logs du serveur
 \`\`\`
 **\`${pf}presetlogs\`**
-Créer et configure automatiquement tous les salons logs
+Créer et configurer automatiquement tous les salons logs
 
 **\`${pf}messagelog\`**
-Affiche toutes les logs des messages supprimés ou édités
+Afficher toutes les logs des messages supprimés ou édités
 
 **\`${pf}modlog\`**
-Affiche toutes les logs des actions de modération
+Afficher toutes les logs des actions de modération
 
 **\`${pf}ticketlog\`**
-Affiche les logs des tickets
+Afficher les logs des tickets
 
 **\`${pf}giveawaylog\`**
-Affiche les logs de chaque Giveaway lancé dans le serveur
+Afficher les logs de chaque Giveaway lancé dans le serveur
 
 **\`${pf}boostlog\`**
-Affiche une log dès qu'une personne boostera le serveur
+Afficher une log dès qu'une personne booste le serveur
 
 **\`${pf}raidlog\`**
 Permet d'afficher les logs des embeds supprimés
 
 **\`${pf}setsuggest\`**
 Salon qui sera utilisé pour envoyé toutes les suggestions proposés par les membres
-                    
-
-                    
                           `)
                 .setFooter({ text: `${footer} | Prefix actuel : ${pf}` })
                 .setColor(color)
@@ -922,13 +915,11 @@ Salon qui sera utilisé pour envoyé toutes les suggestions proposés par les me
 
             const giveaway = new Discord.MessageEmbed()
                 .setDescription(`
-                          
 \`\`\`fix
 Giveaway
 \`\`\`
 **\`${pf}giveaway <salon> <temps> <nombre winners> <Gain>\`**
 Permet de lancer un Giveaway sur le serveur
-
                           `)
                 .setFooter({ text: `${footer} | Prefix actuel : ${pf}` })
                 .setColor(color)
@@ -936,7 +927,6 @@ Permet de lancer un Giveaway sur le serveur
 
             const jeux = new Discord.MessageEmbed()
                 .setDescription(`
-                          
 \`\`\`fix
 Jeux
 \`\`\`
@@ -953,8 +943,6 @@ Jeux
 **\`${pf}gunfight\`**
 **\`${pf}puissance4\`**
 **\`${pf}snake\`**
-
-
                           `)
                 .setFooter({ text: `${footer} | Prefix actuel : ${pf}` })
                 .setColor(color)
@@ -962,7 +950,6 @@ Jeux
 
             const antiraid = new Discord.MessageEmbed()
                 .setDescription(`
-                          
 \`\`\`fix
 Configuration de l'Antiraid
 \`\`\`
@@ -977,7 +964,7 @@ Active toutes les protections de l'antiraid
 Désactive toutes les protections de l'antiraid
 
 **\`${pf}punition\`**
-Permet de choisir la punition si un membre non owner/wl tente de faire une action non autorisé
+Permet de choisir la punition si un membre non owner/wl tente de faire une action non autorisée
 
 **\`${pf}antiadmin on/off\`**
 **\`${pf}antiban on/off\`**
@@ -989,13 +976,11 @@ Permet de choisir la punition si un membre non owner/wl tente de faire une actio
 **\`${pf}antichannel create on/off\`**
 **\`${pf}antichannel delete on/off\`**
 **\`${pf}antichannel update on/off\`**
-**\`${pf}antirole create on/off\`**
-**\`${pf}antirole delete on/off\`**
-**\`${pf}antirole update on/off\`**
+**\`${pf}antirôle create on/off\`**
+**\`${pf}antirôle delete on/off\`**
+**\`${pf}antirôle update on/off\`**
 **\`${pf}antiwebhook on/off\`**
 **\`${pf}server lock/unlock\`**
-
-
                           `)
                 .setFooter({ text: `${footer} | Prefix actuel : ${pf}` })
                 .setColor(color)
@@ -1003,7 +988,6 @@ Permet de choisir la punition si un membre non owner/wl tente de faire une actio
 
             const music = new Discord.MessageEmbed()
                 .setDescription(`
-                          
 \`\`\`fix
 Musique
 \`\`\`
@@ -1014,21 +998,19 @@ Permet d'écouter de la musique sur un serveur
 Permet de mettre en pause la musique actuelle
 
 **\`${pf}resume\`**
-Permet de remettre en lecture la musique mise en pause
+Permet de reprendre la lecture de la musique mise en pause
 
 **\`${pf}stop\`**
-Permet d'arreter la musique
+Permet d'arrêter la musique
 
 **\`${pf}volume <0/150>\`**
 Permet de régler le volume de la musique
-
                           `)
                 .setFooter({ text: `${footer} | Prefix actuel : ${pf}` })
                 .setColor(color)
 
             const proprio = new Discord.MessageEmbed()
                 .setDescription(`
-                          
 \`\`\`fix
 Propriétaire du bot
 \`\`\`
@@ -1036,7 +1018,7 @@ Propriétaire du bot
 Obtenir une invitation de votre bot
 
 **\`${pf}owner\`**
-Permet de mettre owner un membre __Attention les owners peuvent faire toutes les commandes__
+Permet de mettre owner un membre __attention les owners peuvent faire toutes les commandes__
 
 **\`${pf}unowner\`**
 Permet de retirer un membre des owners
@@ -1045,14 +1027,13 @@ Permet de retirer un membre des owners
 Permet de redémarrer le bot
 
 **\`${pf}serverlist\`**
-Permet d'obtenir la liste des servers où se trouvent le bot
+Permet d'obtenir la liste des serveurs où se trouvent le bot
 
 **\`${pf}setavatar <image>\`**
-Change la pp du bot
+Change la photo de profil du bot
 
 **\`${pf}setname <Nouveau Nom>\`**
 Change le nom du bot
-
                           `)
                 .setFooter({ text: `${footer} | Prefix actuel : ${pf}` })
                 .setColor(color)
@@ -1068,7 +1049,7 @@ Change le nom du bot
                     collected.deferUpdate().catch(() => false)
                     const value = collected.values[0];
 
-                    if (value === "accueille") {
+                    if (value === "accueil") {
                         msg.edit({ embeds: [Help], components: [row] });
                     }
                     if (value === "owner") {
@@ -1131,22 +1112,22 @@ Owner bot
 \`\`\`
 
 **\`${pf}setalerte [ID]\`**
-Permet de mettre en place un salon d'alerte lorsqu'une permission administrateur sera ajouté à un membre
+Permet de mettre en place un salon d'alerte lorsqu'une permission administrateur est ajoutée à un membre
 
 **\`${pf}alerte\`**
-Permet de choisir les perms pour les quels il faudra ping dans le salon alerte
+Permet de choisir les permissions pour lesquels il faudra ping dans le salon alerte
 
 **\`${pf}alerteping [@]\`**
-Permet de choisir quel role sera mentionner lors de alertes permissions administrateurs
+Permet de choisir quel rôle sera mentionné en cas d'alertes permissions administrateurs
 
 **\`${pf}soutien\`**
-Permet de choisir un role et un statut de soutien afin de récompenser les membres qui ont le statut
+Permet de choisir un rôle et un statut de soutien afin de récompenser les membres qui ont le statut
 
 **\`${pf}imghelp [lien]\`**
-Permet de choisir quelle image/gif sera affiché dans l'accueil du help
+Permet de choisir quelle gif/image sera affiché dans l'accueil du help
 
 **\`${pf}muterole\`**
-Met en place un role muet sur le serveur
+Met en place un rôle muet sur le serveur
 
 **\`${pf}wl/unwl\`**
 Permet de gérer la whitelist du bot
@@ -1158,34 +1139,33 @@ Recupère tous les messages d'un salon
 Permet de créer un système de ticket personnalisé sur le serveur
 
 **\`${pf}ticketset\`**
-Créer un système ticket pré défini
+Créer un système ticket pré-défini
 
 **\`${pf}permticket\`**
-Permet de configuré un role qui aura accès aux tickets
+Permet de configurer un rôle qui aura accès aux tickets
 
 **\`${pf}setcategorie\`**
-Permet de séléctionner la catégorie ou seront ouvert les tickets
+Permet de sélectionner la catégorie où seront ouvert les tickets
 
 **\`${pf}massiverole add/remove\`**
-Donne ou retire un role à tous les membres du serveur
+Donne ou retire un rôle à tous les membres du serveur
 
 **\`${pf}derankall\`**
-Derank toutes les personnes ayant des Permissions Dangereuses sur le serveur
+Derank toutes les personnes ayant des permissions dangereuses sur le serveur
 
 **\`${pf}embed\`**
-Créer un embed grace à l'embed builder
+Créer un embed grâce à l'embed builder
 
 **\`${pf}buttonrole <role> <description>\`**
-Créer un embed pour que les gens puissent cliqué pour avoir un role
+Créer un embed pour que les gens puissent cliquer pour avoir un rôle
 
 **\`${pf}prefix\`**
 Change le prefix du bot
 
 **\`${pf}dero <@role>\`**
-Permet de configuré un role avec un maximum de dérogations pour les owners [Gérer les roles/Gérer les salons/Renommer des membres/etc]
-Cela permet d'éviter d'attribué des permissions administrateurs et les membres possédant ce role pourront avoir accès à 80% comme une perm admin
-Faites attention de ne quand meme pas attribué cette permission à n'importe quel role
-
+Permet de configurer un rôle avec un maximum de dérogations pour les owners [Gérer les rôles/Gérer les salons/Renommer des membres/etc]
+Cela permet d'éviter d'attribuer des permissions administrateurs. Les membres possédant ce rôle pourront avoir accès à 80% comme une permission administrateur.
+Faites attention de ne quand même pas attribuer cette permission à n'importe quel rôle.
           `)
                 .setFooter({ text: `${footer} | Prefix actuel : ${pf}` })
                 .setColor(color)
@@ -1218,7 +1198,7 @@ Permet de gérer la blacklist
 Affiche la configuration des perms configurés sur le serveur
                 
 **\`${pf}set/del perm1/2/3/gs/gp/ga <role>\`**
-Permet de configurer le niveau de permission associé à un role
+Permet de configurer le niveau de permission associé à un rôle
                 
 **\`${pf}say <message>\`**
 Faire parler de bot dans un salon textuel
@@ -1233,7 +1213,7 @@ Permet de d'ouvrir tous les salons du serveur
 Permet de configurer les paramètres du join settings
                 
 **\`${pf}join role <role>\`**
-Attribue un role automatiquement aux membres qui rejoignent le serveur
+Attribue un rôle automatiquement aux membres qui rejoignent le serveur
                 
 **\`${pf}join channel <#/ID>\`**
 Salon dans le quel seront envoyés les messages de bienvenue
@@ -1354,10 +1334,10 @@ Permet d'ouvrir un salon
 Afficher la configuration du bot sur le serveur
 
 **\`${pf}addrole\`**
-Permet d'ajouter un role à un membre
+Permet d'ajouter un rôle à un membre
 
 **\`${pf}delrole\`**
-Retire un role à un membre
+Retire un rôle à un membre
 
 **\`${pf}annonce\`**
 Permet de faire une annonce de l'administration
@@ -1433,7 +1413,7 @@ Permet d'obtenir la pp du serveur
 Permet d'obtenir la bannière du serveur
 
 **\`${pf}roleinfo [role]\`**
-Permet d'obtenir des informations sur un role
+Permet d'obtenir des informations sur un rôle
 
 **\`${pf}find [@/ID]\`**
 Permet de chercher un membre en vocal sur le serveur
@@ -1596,9 +1576,9 @@ Permet de choisir la punition si un membre non owner/wl tente de faire une actio
 **\`${pf}antichannel create on/off\`**
 **\`${pf}antichannel delete on/off\`**
 **\`${pf}antichannel update on/off\`**
-**\`${pf}antirole create on/off\`**
-**\`${pf}antirole delete on/off\`**
-**\`${pf}antirole update on/off\`**
+**\`${pf}antirôle create on/off\`**
+**\`${pf}antirôle delete on/off\`**
+**\`${pf}antirôle update on/off\`**
 **\`${pf}antiwebhook on/off\`**
 **\`${pf}server lock/unlock\`**
 

@@ -52,7 +52,7 @@ module.exports = {
 
                 const embed = new Discord.MessageEmbed()
                     .setColor(color)
-                    .setDescription(`<@${message.author.id}> a \`clear\` ${args[0]} message dans <#${message.channel.id}>`)
+                    .setDescription(`<@${message.author.id}> a \`supprimé\` ${args[0]} message(s) dans <#${message.channel.id}>`)
                     .setTimestamp()
                     .setFooter({ text: `📚` })
                 const logchannel = client.channels.cache.get(ml.get(`${message.guild.id}.modlog`))

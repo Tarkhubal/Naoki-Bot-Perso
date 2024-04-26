@@ -27,11 +27,11 @@ module.exports = {
         if (!role) return
 
         if (!interaction.member.roles.cache.has(role.id)) {
-            interaction.reply({ content: `${interaction.user}, je vous ai donné le rôle \`${role.name}\``, ephemeral: true })
+            interaction.reply({ content: `${interaction.user}, je vous ai donné le rôle \`${role.name}\`.`, ephemeral: true })
             interaction.member.roles.add(role).catch(() => false)
         }
         else {
-            interaction.reply({ content: `${interaction.user}, je vous ai enlevé le rôle \`${role.name}\``, ephemeral: true })
+            interaction.reply({ content: `${interaction.user}, je vous ai enlevé le rôle \`${role.name}\`.`, ephemeral: true })
             interaction.member.roles.remove(role).catch(() => false)
         }
     }

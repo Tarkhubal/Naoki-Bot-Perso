@@ -32,8 +32,8 @@ module.exports = {
 
                 const embed = new Discord.MessageEmbed()
                     .setColor(color)
-                    .setTitle(`${message.author.tag} à défini ce salon commme salon des logs de modération`)
-                    .setDescription(`${emote.administration.loading} Ce salon est désormais utilisé pour __toutes__ les **logs de modération** du serveur\n Executeur : <@${message.author.id}>`)
+                    .setTitle(`${message.author.tag} a défini ce salon commme salon des logs de modération`)
+                    .setDescription(`${emote.administration.loading} Ce salon est désormais utilisé pour __toutes__ les **logs de modération** du serveur\nExécuteur : <@${message.author.id}>`)
                     .setTimestamp()
                     .setFooter({ text: `${footer}` })
                 client.channels.cache.get(logs).send({ embeds: [embed] }).catch(() => false)

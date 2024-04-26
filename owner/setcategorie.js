@@ -22,7 +22,7 @@ module.exports = {
             const funny = message.guild.channels.cache.filter(x => x.type === "GUILD_CATEGORY")
 
             const newCategorie = message.guild.channels.cache.get(args[0] || funny.id);
-            if (!newCategorie) return message.channel.send({ content: "Aucun catégorie trouvé !" })
+            if (!newCategorie) return message.channel.send({ content: "Aucun catégorie trouvée !" })
             if (ct.get(`${message.guild.id}.categorie`) === newCategorie) return message.channel.send(`📧 | __Nouvelle catégorie :__ \`${ct.get(`${message.guild.id}.categorie`)}\``)
             else {
                 ct.set(`${message.guild.id}.categorie`, args[0])

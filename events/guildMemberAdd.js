@@ -27,18 +27,18 @@ module.exports = {
             member.kick("Serveur Vérouillé")
             const embed = new Discord.MessageEmbed()
                 .setColor(color)
-                .setDescription(`${member} à été **kick** pour avoir \`rejoint pendant que le serveur était verrouillé\``)
+                .setDescription(`${member} a été **kick** pour avoir \`rejoins pendant que le serveur était verrouillé\``)
             const channel = client.channels.cache.get(rlog.fetch(`${member.guild.id}.raidlog`))
             if (channel) channel.send({ embeds: [embed] }).catch(() => false)
         }
 
         if (db.get(`blacklist.${member.id}`)) {
 
-            member.send({ content: `Vous etes blacklist de **${member.guild.name}** vous ne pouvez pas rejoindre le serveur` })
+            member.send({ content: `Vous êtes blacklist de **${member.guild.name}** vous ne pouvez pas rejoindre le serveur` })
             member.guild.members.ban(member.id, { reason: `Blacklist` })
             const embed = new Discord.MessageEmbed()
                 .setColor(color)
-                .setDescription(`${member} a rejoit en étant __blacklist__, il à été **ban**`)
+                .setDescription(`${member} a rejoint en étant __blacklist__, il a été **banni**`)
             const channel = client.channels.cache.get(rlog.fetch(`${member.guild.id}.raidlog`))
             if (channel) channel.send({ embeds: [embed] }).catch(() => false)
         }

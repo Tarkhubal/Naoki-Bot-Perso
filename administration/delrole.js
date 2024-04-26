@@ -9,7 +9,7 @@ const pgs = new db.table("PermGs")
 module.exports = {
     name: 'delrole',
     usage: 'delrole',
-    description: `Permet de retiré un role à un membre.`,
+    description: `Permet de retirer un rôle à un membre.`,
     async execute(client, message, args) {
 
         if (owner.get(`owners.${message.author.id}`) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -33,7 +33,7 @@ module.exports = {
 
                 const embed = new Discord.MessageEmbed()
                     .setColor(color)
-                    .setDescription(`➖ <@${message.author.id}> à utilisé la commande \`delrole\` sur ${member}\nRole retiré : ${role}`)
+                    .setDescription(`➖ <@${message.author.id}> a utilisé la commande \`delrole\` sur ${member}\nRole retiré : ${role}`)
                     .setTimestamp()
                     .setFooter({ text: `📚` })
                 const logchannel = client.channels.cache.get(ml.fetch(`${message.guild.id}.modlog`))
@@ -57,7 +57,7 @@ module.exports = {
 
                 const embed = new Discord.MessageEmbed()
                     .setColor(color)
-                    .setDescription(`➖ <@${message.author.id}> à utilisé la commande \`delrole\` sur ${member}\nRole retiré : ${role}`)
+                    .setDescription(`➖ <@${message.author.id}> a utilisé la commande \`delrole\` sur ${member}\nRôle retiré : ${role}`)
                     .setTimestamp()
                     .setFooter({ text: `📚` })
                 const logchannel = client.channels.cache.get(ml.get(`${message.guild.id}.modlog`))

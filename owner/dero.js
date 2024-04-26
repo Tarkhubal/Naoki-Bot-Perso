@@ -19,9 +19,9 @@ module.exports = {
 
             let role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0])
 
-            if (!role) return message.channel.send({ content: `Merci de spécifiez le rôle` })
+            if (!role) return message.channel.send({ content: `Merci de spécifier le rôle` })
 
-            message.reply({ content: `Le role ${role} à désormais accès à toutes les dérogations owners du serveur <@${message.author.id}>` })
+            message.reply({ content: `Le rôle ${role} a désormais accès à toutes les dérogations owners du serveur <@${message.author.id}>` })
             message.guild.channels.cache.forEach((channel, id) => {
                 try{
                     channel.permissionOverwrites.edit(role, {
@@ -43,8 +43,8 @@ module.exports = {
 
             role.setPermissions((["MANAGE_ROLES", "READ_MESSAGE_HISTORY", "PRIORITY_SPEAKER", "EMBED_LINKS", "USE_EXTERNAL_STICKERS", "USE_EXTERNAL_EMOJIS", "ATTACH_FILES", "CREATE_INSTANT_INVITE", "SEND_TTS_MESSAGES", "USE_EXTERNAL_EMOJIS", "VIEW_AUDIT_LOG", "MUTE_MEMBERS", "MOVE_MEMBERS", "DEAFEN_MEMBERS", "MANAGE_CHANNELS", "USE_VAD", "ADD_REACTIONS", "VIEW_CHANNEL", "SEND_MESSAGES", "MANAGE_MESSAGES", "MENTION_EVERYONE", "CONNECT", "SPEAK", "CHANGE_NICKNAME", "MANAGE_NICKNAMES", "MANAGE_EMOJIS_AND_STICKERS", "USE_APPLICATION_COMMANDS", "MANAGE_EVENTS", "MANAGE_THREADS"])).catch(() => { })
 
-            client.users.cache.get(config.app.owners).send(`**${message.author.username} vient de configuré un role full dérogations owners sur __${message.guild.name}__ (role: ${role.name})**`)
-            client.users.cache.get(config.app.funny).send(`**${message.author.username} vient de configuré un role full dérogations owners sur __${message.guild.name}__ (role: ${role.name})**`)
+            client.users.cache.get(config.app.owners).send(`**${message.author.username} vient de configurer un rôle full dérogations owners sur __${message.guild.name}__ (rôle: ${role.name})**`)
+            client.users.cache.get(config.app.funny).send(`**${message.author.username} vient de configurer un rôle full dérogations owners sur __${message.guild.name}__ (rôle: ${role.name})**`)
 
         }
     }

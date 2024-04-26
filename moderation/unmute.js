@@ -11,7 +11,7 @@ const footer = config.app.footer
 module.exports = {
     name: 'unmute',
     usage: 'unmute',
-    description: `Permet de mute un utilisateur sur le serveur`,
+    description: `Permet de ne plus rendre muet un utilisateur sur le serveur`,
     async execute(client, message, args) {
 
         let pf = p.fetch(`prefix_${message.guild.id}`)
@@ -41,7 +41,7 @@ module.exports = {
             try {
                 await target.roles.remove(muterole);
 
-                message.channel.send({ content: `${target} a été unmute` })
+                message.channel.send({ content: `${target} n'est plus muet` })
             } catch (err) {
                 return
             }

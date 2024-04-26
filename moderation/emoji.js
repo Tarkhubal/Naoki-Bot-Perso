@@ -16,7 +16,7 @@ module.exports = {
   
         if (owner.get(`owners.${message.author.id}`) || message.member.roles.cache.has(perm2) || message.member.roles.cache.has(perm3) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
 
-            if (!args.length) return message.channel.send({ content: "Veuillez spécifier de émoji" })
+            if (!args.length) return message.channel.send({ content: "Veuillez spécifier l'émoji" })
 
             for (const rawEmoji of args) {
                 const parsedEmoji = Util.parseEmoji(rawEmoji)

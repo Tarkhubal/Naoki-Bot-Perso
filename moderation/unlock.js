@@ -26,14 +26,14 @@ module.exports = {
                     channel.permissionOverwrites.edit(message.guild.id, {
                         SEND_MESSAGES: false,
                     })
-                }, `Tous les salons ouverts par ${message.author.tag}`);
+                }, `Tous les salons ont été ouverts par ${message.author.tag}`);
 
                 message.channel.send(`${message.guild.channels.cache.size} salons ouverts`);
 
                 const channellogs = alerte.get(`${message.guild.id}.alerteperm`)
 
                 const embed = new Discord.MessageEmbed()
-                    .setDescription(`:unlock: | ${message.author.tag} vient d'ouvrir tous les salons du serveur \n Executeur : <@${message.author.id}>`)
+                    .setDescription(`:unlock: | ${message.author.tag} vient d'ouvrir tous les salons du serveur\nExécuteur : <@${message.author.id}>`)
                     .setTimestamp()
                     .setColor(color)
                     .setFooter({ text: `📚` })
@@ -57,7 +57,7 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
             .setColor(color)
-            .setDescription(`<@${message.author.id}> a \`dévérouiller\` le salon <#${message.channel.id}>`)
+            .setDescription(`<@${message.author.id}> a \`déverrouillé\` le salon <#${message.channel.id}>`)
             .setTimestamp()
             .setFooter({ text: `📚` })
             const logchannel = client.channels.cache.get(ml.get(`${message.guild.id}.modlog`))

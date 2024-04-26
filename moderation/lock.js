@@ -12,7 +12,7 @@ const p3 = new db.table("Perm3")
 module.exports = {
     name: 'lock',
     usage: 'lock',
-    description: `Permet de lock un salon`,
+    description: `Permet de verrouillé un salon`,
     async execute(client, message, args, color) {
 
         if (owner.get(`owners.${message.author.id}`) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -26,14 +26,14 @@ module.exports = {
                     channel.permissionOverwrites.edit(message.guild.id, {
                         SEND_MESSAGES: false,
                     })
-                }, `Tous les salons fermés par ${message.author.tag}`);
+                }, `Tous les salons ont été fermés par ${message.author.tag}`);
 
                 message.channel.send(`${message.guild.channels.cache.size} salons fermés`);
 
                 const channellogs = alerte.get(`${message.guild.id}.alerteperm`)
 
                 const embed = new Discord.MessageEmbed()
-                    .setDescription(`:lock: | ${message.author.tag} vient de fermé tous les salons du serveur \n Executeur : <@${message.author.id}>`)
+                    .setDescription(`:lock: | ${message.author.tag} vient de fermer tous les salons du serveur \nExécuteur : <@${message.author.id}>`)
                     .setTimestamp()
                     .setColor(color)
                     .setFooter({ text: `📚` })
@@ -59,7 +59,7 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
             .setColor(color)
-            .setDescription(`<@${message.author.id}> a \`vérouiller\` le salon <#${message.channel.id}>`)
+            .setDescription(`<@${message.author.id}> a \`verrouillé\` le salon <#${message.channel.id}>`)
             .setTimestamp()
             .setFooter({ text: `📚` })
         const logchannel = client.channels.cache.get(ml.get(`${message.guild.id}.modlog`))

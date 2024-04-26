@@ -10,7 +10,7 @@ const fs = require('fs')
 module.exports = {
     name: 'botlist',
     usage: 'botlist',
-    description: `Permet d'afficher la liste des bots présent sur le serveur.`,
+    description: `Permet d'afficher la liste des bots présents sur le serveur.`,
     async execute(client, message) {
 
         let color = cl.fetch(`color_${message.guild.id}`)

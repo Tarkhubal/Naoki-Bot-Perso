@@ -10,7 +10,7 @@ const footer = config.app.footer
 module.exports = {
     name: 'theme',
     usage: 'theme',
-    description: `Permet de changer le theme couleur du bot`,
+    description: `Permet de changer le thème couleur du bot`,
     async execute(client, message, args) {
 
         if (owner.get(`owners.${message.author.id}`) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -95,14 +95,14 @@ module.exports = {
 
             const embedtheme = new Discord.MessageEmbed()
 
-                .setTitle('Theme')
+                .setTitle('Thème')
                 .setDescription(`Choisissez la couleur qui sera utilisée pour le thème du bot`)
                 .setColor(color)
                 .setFooter({ text: `${footer}` })
 
             const ok = new Discord.MessageEmbed()
-                .setTitle('Theme')
-                .setDescription('Le Theme de votre bot à été mis à jour avec succès')
+                .setTitle('Thème')
+                .setDescription('Le thème de votre bot a été mis à jour avec succès')
                 .setColor(color)
 
             message.channel.send({ embeds: [embedtheme], components: [theme] }).then(async msg => {

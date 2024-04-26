@@ -9,7 +9,7 @@ const cl = new db.table("Color")
 module.exports = {
     name: 'punition',
     usage: 'punition',
-    description: `Permet de configuré la punition de l'antiraid.`,
+    description: `Permet de configurer la punition de l'antiraid.`,
     async execute(client, message, args) {
 
         let color = cl.fetch(`color_${message.guild.id}`)
@@ -27,17 +27,17 @@ module.exports = {
 
             const derank = new Discord.MessageEmbed()
                 .setTitle(`Punition Raid`)
-                .setDescription(`Nouvelle Punition : \`derank\``)
+                .setDescription(`Nouvelle punition : \`derank\``)
                 .setColor(color)
 
             const kick = new Discord.MessageEmbed()
                 .setTitle(`Punition Raid`)
-                .setDescription(`Nouvelle Punition : \`kick\``)
+                .setDescription(`Nouvelle punition : \`kick\``)
                 .setColor(color)
 
             const ban = new Discord.MessageEmbed()
                 .setTitle(`Punition Raid`)
-                .setDescription(`Nouvelle Punition : \`ban\``)
+                .setDescription(`Nouvelle punition : \`ban\``)
                 .setColor(color)
 
 
@@ -72,19 +72,19 @@ module.exports = {
 
                     if (value === "derank") {
                         punish.set(`sanction_${message.guild.id}`, "derank")
-                        c.reply({ content: `La punition en cas de __raid__ sera désormais un **derank**`, ephemeral: true })
+                        c.reply({ content: `La punition en cas de __raid__ est désormais un **derank**`, ephemeral: true })
                         msg.edit({ embeds: [derank] })
                     }
 
                     else if (value === "kick") {
                         punish.set(`sanction_${message.guild.id}`, "kick")
-                        c.reply({ content: `La punition en cas de __raid__ sera désormais un **kick**`, ephemeral: true })
+                        c.reply({ content: `La punition en cas de __raid__ est désormais un **kick**`, ephemeral: true })
                         msg.edit({ embeds: [kick] })
                     }
 
                     if (value === "ban") {
                         punish.set(`sanction_${message.guild.id}`, "ban")
-                        c.reply({ content: `La punition en cas de __raid__ sera désormais un **ban**`, ephemeral: true })
+                        c.reply({ content: `La punition en cas de __raid__ est désormais un **ban**`, ephemeral: true })
                         msg.edit({ embeds: [ban] })
                     }
 

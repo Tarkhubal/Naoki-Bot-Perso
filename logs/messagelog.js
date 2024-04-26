@@ -11,7 +11,7 @@ const emote = require('../emotes.json')
 module.exports = {
     name: 'messagelog',
     usage: 'messagelog <id>',
-    description: `Permet de changer le salon des logs.`,
+    description: `Permet de changer le salon des logs pour les messages.`,
     async execute(client, message, args) {
 
         if (owner.get(`owners.${message.author.id}`) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -31,8 +31,8 @@ module.exports = {
 
                 const embed = new Discord.MessageEmbed()
                     .setColor(color)
-                    .setTitle(`${message.author.tag} à défini ce salon commme salon des logs message`)
-                    .setDescription(`${emote.buyer.loading} Ce salon est désormais utilisé pour __toutes__ les **logs message** du serveur\n Executeur : <@${message.author.id}>`)
+                    .setTitle(`${message.author.tag} a défini ce salon commme salon des logs message`)
+                    .setDescription(`${emote.buyer.loading} Ce salon est désormais utilisé pour __toutes__ les **logs message** du serveur\nExécuteur : <@${message.author.id}>`)
                     .setTimestamp()
                     .setFooter({ text: `${footer}` })
                 client.channels.cache.get(logs).send({ embeds: [embed] }).catch(() => false)

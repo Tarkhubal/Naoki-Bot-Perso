@@ -32,7 +32,7 @@ module.exports = {
             winMessage: 'GG, Tu as gagné! Tu l\'as fait en **{{time}}**.',
             loseMessage: 'Plus de chance la prochaine fois!',
             wrongWordMessage: 'Mauvais mot ! Tu as **{{remaining_tries}}** essais restants.',
-            correctWordMessage: 'GG, **{{word}}** est correcte ! Vous devez trouver **{{remaining}}** mot(s).',
+            correctWordMessage: 'GG, **{{word}}** est correct ! Il te reste **{{remaining}}** mot(s) à trouver.',
             time: 60000,
             words: ['salut', 'temps', 'bravo'],
             charGenerated: 15,

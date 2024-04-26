@@ -9,7 +9,7 @@ const config = require("../config")
 module.exports = {
     name: 'ticket',
     usage: 'ticket',
-    description: `Permet de créer un systeme de ticket personnalisé`,
+    description: `Permet de créer un système de ticket personnalisé`,
     async execute(client, message, args) {
 
         if (owner.get(`owners.${message.author.id}`) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -71,7 +71,7 @@ module.exports = {
 
             let embed = (new MessageEmbed({ description: '\u200B' }))
 
-            message.channel.send({ content: `**Panel de création de ticket personnalisé de ${client.user}.**` }).then(async d => {
+            message.channel.send({ content: `**Panel de création de tickets personnalisés de ${client.user}.**` }).then(async d => {
                 let msgembed = await d.channel.send({ embeds: [embed], components: [embedBuilderActionRow, embedBuilderActionRowSendEdit] }).catch(async err => { return; })
                 const filter = m => message.author.id === m.author.id;
                 const filterSelect = i => message.author.id === i.user.id;
@@ -92,7 +92,7 @@ module.exports = {
                             .addOptions([
                                 {
                                     label: '❌',
-                                    description: 'Annulé',
+                                    description: 'Annuler',
                                     value: 'rien',
                                 },
                                 {
@@ -116,18 +116,18 @@ module.exports = {
                                 channel.send({ embeds: [embed], components: [row] })
                                 collected.first().delete().catch(() => false)
                                 yx.delete().catch(() => false).catch(() => false)
-                                cld.message.channel.send({ content: "Ticket créer dans le salon **" + channel.name + "**." })
+                                cld.message.channel.send({ content: "Ticket créé dans le salon **" + channel.name + "**." })
                                 cld.message.delete().catch(() => false);
                                 msgembed.delete().catch(() => false);
                                 d.delete();
                             })
                     } else if (cld.customId === "embededit") {
-                        var yx = await cld.message.channel.send({ content: "Dans quel salon est le message à éditer par l'embed ?" })
+                        var yx = await cld.message.channel.send({ content: "Dans quel salon est le message avec l'embed à éditer ?" })
                         message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ["time"] })
                             .then(async (collected) => {
                                 var channel = cld.message.guild.channels.cache.get(collected.first().content) || collected.first().mentions.channels.first()
                                 if (!channel) return cld.message.channel.send({ content: "Salon introuvable." })
-                                var yxy = await cld.message.channel.send({ content: "Quel est l'identifiant du message à éditer par l'embed ?" })
+                                var yxy = await cld.message.channel.send({ content: "Quel est l'identifiant du message avec l'embed à éditer ?" })
                                 message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ["time"] })
                                     .then(async (collected2) => {
                                         var msg = await channel.messages.fetch(collected2.first().content)
@@ -138,7 +138,7 @@ module.exports = {
                                         collected.first().delete().catch(() => false).catch(() => false)
                                         yx.delete().catch(() => false).catch(() => false)
                                         yxy.delete().catch(() => false)
-                                        cld.message.channel.send({ content: "Le message à été édité par l'embed dans le salon **" + channel.name + "**." })
+                                        cld.message.channel.send({ content: "Le message dans le salon**" + channel.name + "** avec l'embed à éditer a été édité." })
                                         cld.message.delete().catch(() => false);
                                         msgembed.delete().catch(() => false);
                                         d.delete();
@@ -233,7 +233,7 @@ module.exports = {
                         message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ["time"] })
                             .then(async (collected) => {
                                 if (collected.first().content.length > 64) return cld.message.channel.send({ content: "Texte trop long." }).then(async z => setTimeout(z.delete(), 2000))
-                                var yxy = await cld.message.channel.send({ content: "Quel sera l'icone du **Footer** de l'embed ?" })
+                                var yxy = await cld.message.channel.send({ content: "Quel sera l'icône du **Footer** de l'embed ?" })
                                 message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ["time"] })
                                     .then(async (collected2) => {
                                         var a;
@@ -283,7 +283,7 @@ module.exports = {
                                 yx.delete().catch(() => false)
 
                                 if (a === false) {
-                                    return collected.message.channel.send({ content: "L'image voulue est Invalide." })
+                                    return collected.message.channel.send({ content: "L'image voulue est invalide." })
                                 } else if (a !== false) {
                                     embed.setThumbnail(a.toString());
                                 }
@@ -310,7 +310,7 @@ module.exports = {
                                 yx.delete().catch(() => false)
 
                                 if (a === false) {
-                                    return collected.message.channel.send({ content: "L'image voulue est Invalide." })
+                                    return collected.message.channel.send({ content: "L'image voulue est invalide." })
                                 } else if (a !== false) {
                                     embed.setImage(a.toString());
                                 }
@@ -377,18 +377,18 @@ module.exports = {
                                     })
                             })
                     } else if (value === "embeddelfield") {
-                        var yx = await cld.message.channel.send({ content: "Quel est le numéro du **Field** ?" })
+                        var yx = await cld.message.channel.send({ content: "Quel est la position du **Field** ?" })
                         message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ["time"] })
                             .then(async (collected) => {
                                 if (embed.fields.length < 1) return cld.message.channel.send({ content: "Aucun field trouvé sur l'embed." })
-                                if (isNaN(collected.first().content)) return cld.message.channel.send({ content: "La valeur spécifiée doit être un numéro." })
-                                if (collected.first().content > embed.fields.length) return cld.message.channel.send({ content: "Le numéro est trop élevé." })
+                                if (isNaN(collected.first().content)) return cld.message.channel.send({ content: "La valeur spécifiée doit être un nombre." })
+                                if (collected.first().content > embed.fields.length) return cld.message.channel.send({ content: "La position est trop élevée." })
                                 var indexField = Number(collected.first().content) - 1
                                 embed.spliceFields(indexField, 1)
                                 msgembed.edit({ embeds: [embed] })
                             })
                     } else if (value === "embedcopyother") {
-                        var yx = await cld.message.channel.send({ content: "Quel est le salon de l'**Embed** ?" })
+                        var yx = await cld.message.channel.send({ content: "Quel est le salon où envoyer l'**Embed** ?" })
                         message.channel.awaitMessages({ filter, max: 1, time: 60000, errors: ["time"] })
                             .then(async (collected) => {
                                 var channel = cld.message.guild.channels.cache.get(collected.first().content) || collected.first().mentions.channels.first()

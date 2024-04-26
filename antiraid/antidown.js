@@ -9,7 +9,7 @@ const ad = new db.table("Antidown")
 module.exports = {
     name: 'antidown',
     usage: 'antidownn',
-    description: `Permet de config l'antiraid.`,
+    description: `Permet de configurer l'antiraid.`,
     async execute(client, message, args) {
 
         let color = cl.fetch(`color_${message.guild.id}`)
@@ -31,7 +31,7 @@ module.exports = {
                     .setColor(color)
                 message.channel.send({ embeds: [embed] })
             } else {
-                return message.reply(`Paramètres invalide`)
+                return message.reply(`Paramètre invalide. Veuillez spécifier **on** ou **off**`)
             }
         }
     }

@@ -27,7 +27,7 @@ module.exports = {
           status: "online"
         })
         message.channel.send(`J'écoute maintenant __${str_content}__`)
-          .catch(e => { return message.channel.send(`Une erreur a été rencontré.`); });
+          .catch(e => { return message.channel.send(`Une erreur est survenue.`); });
       }
     }
   }

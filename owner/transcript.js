@@ -32,7 +32,7 @@ module.exports = {
 
             const hastebin = require("hastebin-gen");
 
-            hastebin(`Voici les logs du salon ${message.channel.name} - ${message.channel.id} sur le serveur ${message.guild.name}\nCes logs ont été demandés par ${message.author.username}\n\u200b\n` + results, {
+            hastebin(`Voici les logs du salon ${message.channel.name} - ${message.channel.id} sur le serveur ${message.guild.name}\nCes logs ont été demandées par ${message.author.username}\n\u200b\n` + results, {
                 extension: "diff",
                 url: 'https://haste.chaun14.fr/'
             }).then(haste => {

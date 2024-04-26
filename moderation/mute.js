@@ -11,7 +11,7 @@ const footer = config.app.footer
 module.exports = {
     name: 'mute',
     usage: 'mute',
-    description: `Permet de mute un utilisateur sur le serveur`,
+    description: `Permet de rendre muet un utilisateur sur le serveur`,
     async execute(client, message, args) {
 
         let pf = p.fetch(`prefix_${message.guild.id}`)
@@ -38,13 +38,13 @@ module.exports = {
                 reason = '`Aucune raison fournie`';
             }
 
-            if (target.id === message.author.id) return message.channel.send(`**Vous ne pouvez pas vous mute !**`)
+            if (target.id === message.author.id) return message.channel.send(`**Vous ne pouvez pas vous rendre muet !**`)
 
 
             try {
                 await target.roles.add(muterole);
 
-                message.channel.send({ content: `${target} a été mute` })
+                message.channel.send({ content: `${target} a été rendu muet` })
             } catch (err) {
                 return
             }

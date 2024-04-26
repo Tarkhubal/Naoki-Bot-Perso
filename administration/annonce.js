@@ -7,7 +7,7 @@ const config = require("../config")
 module.exports = {
     name: 'annonce',
     usage: 'annonce',
-    description: `Permet de faire une annonce de l'administration.`,
+    description: `Permet de faire une annonce de la part de l'administration.`,
     async execute(client, message, args) {
 
         if (owner.get(`owners.${message.author.id}`) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -17,7 +17,7 @@ module.exports = {
 
             message.delete()
 
-            if (!args.join(" ")) return message.lineReply("Rentrez votre message !");
+            if (!args.join(" ")) return message.lineReply("Entrez votre message !");
 
 
             let embed = new Discord.MessageEmbed()

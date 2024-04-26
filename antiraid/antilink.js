@@ -9,7 +9,7 @@ const al = new db.table("AntiLink")
 module.exports = {
     name: 'antilink',
     usage: 'antilink',
-    description: `Permet de config l'antiraid.`,
+    description: `Permet de configurer l'antiraid.`,
     async execute(client, message, args) {
 
         let color = cl.fetch(`color_${message.guild.id}`)
@@ -21,7 +21,7 @@ module.exports = {
                 al.set(`config.${message.guild.id}.antilinkall`, true)
                 al.set(`config.${message.guild.id}.antilinkinvite`, false)
                 const embed = new Discord.MessageEmbed()
-                    .setDescription(`**L'Antilink** détécte maintenant **tous les liens**`)
+                    .setDescription(`**L'Antilink** détecte maintenant **tous les liens**`)
                     .setColor(color)
                 message.channel.send({ embeds: [embed] })
 
@@ -29,7 +29,7 @@ module.exports = {
                 al.set(`config.${message.guild.id}.antilinkinvite`, true)
                 al.set(`config.${message.guild.id}.antilinkall`, false)
                 const embed = new Discord.MessageEmbed()
-                    .setDescription(`**L'Antilink** détécte maintenant **les invitations de serveurs**`)
+                    .setDescription(`**L'Antilink** détecte maintenant **les invitations de serveurs**`)
                     .setColor(color)
                 message.channel.send({ embeds: [embed] })
 
@@ -41,7 +41,7 @@ module.exports = {
                     .setColor(color)
                 message.channel.send({ embeds: [embed] })
             } else {
-                return message.reply(`Paramètres invalide`)
+                return message.reply(`Paramètre invalide. Veuillez spécifier **on** ou **off**`)
             }
         }
     }

@@ -14,13 +14,13 @@ module.exports = {
             const user = message.mentions.users.first()
             const msg = args.slice(1).join(" ")
 
-            if (!user) return message.reply(`Veuillez mentionner la personne à qui vous souhaitez envoyé un message privé`)
+            if (!user) return message.reply(`Veuillez mentionner la personne à qui vous souhaitez envoyer un message privé`)
             if (!msg) return message.reply(`Veuillez écrire le message qui sera envoyé`)
 
             user.send(`${msg}`).then(() => {
                 return message.reply("Le MP à bien été envoyé")
             }).catch(() => {
-                return message.reply("Les MP de l'utilisateur sont fermé ")
+                return message.reply("Les MP de l'utilisateur sont fermés")
             })
         }
     }

@@ -12,7 +12,7 @@ const pga = new db.table("PermGa")
 module.exports = {
     name: 'end',
     usage: 'end',
-    description: `Termine un Giveaway sur le serveur.`,
+    description: `Terminer un giveaway sur le serveur.`,
     async execute(client, message, args) {
 
         if (owner.get(`owners.${message.author.id}`) || message.member.roles.cache.has(pga.fetch(`permga_${message.guild.id}`)) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -24,17 +24,17 @@ module.exports = {
             if (color == null) color = config.app.color
 
             if (!args[0])
-            return message.reply(`Aucun giveaway de trouvé pour \`${args[0] || 'rien'}\``)
+            return message.reply(`Aucun giveaway trouvé pour \`${args[0] || '(rien)'}\``)
 
             client.giveawaysManager.end(args[0], 'Giveaway annulé, aucun membre n\'a participé.', {
-                winMessage: 'Félicitation, {winners}! Tu as gagné **{this.prize}**!',
+                winMessage: 'Félicitation, {winners}! Vous avez gagné **{this.prize}**!',
 
                 messages: {
-                    congrat: ':tada: Félicitation {winners}, tu as gagné **{this.prize}**!',
-                    error: 'Aucun membre de participe à ce giveaway, le(s) gagnant(s) ne peuvent pas être choisi!'
+                    congrat: ':tada: Félicitation {winners}, vous avez gagné **{this.prize}**!',
+                    error: 'Aucun membre ne participe à ce giveaway, le(s) gagnant(s) ne peuvent pas être choisi!'
                 }
             })
-            .catch(() => message.reply(`Aucun giveaway de trouvé pour \`${args[0] || 'rien'}\``))
+            .catch(() => message.reply(`Aucun giveaway trouvé pour \`${args[0] || 'rien'}\``))
             .then(() => {
                 message.reply('Giveaway Fini.')
 

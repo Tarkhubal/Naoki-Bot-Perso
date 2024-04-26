@@ -18,7 +18,7 @@ module.exports = {
 
         const msg = args.join(" ")
         if (!msg) {
-            return message.channel.send("Quel message veux tu que le chat dise ?")
+            return message.channel.send("Quel message veux-tu que le chat dise ?")
         }
         message.channel.send({
             files: [

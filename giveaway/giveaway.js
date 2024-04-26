@@ -12,7 +12,7 @@ const pga = new db.table("PermGa")
 module.exports = {
     name: 'giveaway',
     usage: 'giveaway',
-    description: `Permet de lancer un Giveaway sur le serveur.`,
+    description: `Permet de lancer un giveaway sur le serveur.`,
     async execute(client, message, args) {
 
         if (owner.get(`owners.${message.author.id}`) || message.member.roles.cache.has(pga.fetch(`permga_${message.guild.id}`)) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -33,7 +33,7 @@ module.exports = {
             let giveawayDuration = args[1];
 
             if (!giveawayDuration || isNaN(ms(giveawayDuration))) {
-                return message.reply(":x: Vous devez spécifier un durée valide!");
+                return message.reply(":x: Vous devez spécifier une durée valide !");
             }
 
 
@@ -57,7 +57,7 @@ module.exports = {
 
                 prize: giveawayPrize,
 
-                winMessage: 'Félicitation, {winners}! Tu as gagné **{this.prize}**!',
+                winMessage: 'Félicitation, {winners}! Vous avez gagné **{this.prize}**!',
 
                 noWinner: 'Giveaway annulé, aucun membre n\'a participé.',
 

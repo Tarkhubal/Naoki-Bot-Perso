@@ -34,9 +34,9 @@ module.exports = {
                                 value: 'open',
                             },
                             {
-                                label: 'Annulé',
+                                label: 'Annuler',
                                 emoji: '988389407730040863',
-                                description: "Annulé l'action",
+                                description: "Annuler l'action",
                                 value: 'rien',
                             },
                         ])
@@ -47,7 +47,7 @@ module.exports = {
                     title: `__Support ${message.guild.name}__`,
                     description: `**Pour ouvrir un Ticket cliquez sur l'un des menus ci-dessous et choisissez l'option qui correspond à votre demande**`,
                     color: color,
-                    footer: { text: `Tout troll sera verra etre sanctionner d'un bannissement` }
+                    footer: { text: `Tout troll pourra être sanctionné d'un bannissement` }
                 }],
                 components: [row]
             })

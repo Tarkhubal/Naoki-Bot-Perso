@@ -26,7 +26,7 @@ const emote = require('../emotes.json')
 module.exports = {
     name: 'secur',
     usage: 'secur',
-    description: `Permet de configuré les sécuritées sur le serveur.`,
+    description: `Permet de configurer les sécuritées sur le serveur.`,
     async execute(client, message, args) {
 
         let color = cl.fetch(`color_${message.guild.id}`)
@@ -196,11 +196,11 @@ module.exports = {
 
              Antichannel update : ${antichannelupdate}
 
-             Antirole create : ${antirolecreate}
+             Antirôle create : ${antirolecreate}
 
-             Antirole delete : ${antiroledelete}
+             Antirôle delete : ${antiroledelete}
 
-             Antirole update : ${antiroleupdate}
+             Antirôle update : ${antiroleupdate}
 
              Anti Update : ${antiupdate}
 
@@ -232,11 +232,11 @@ module.exports = {
    
                 Antichannel update : ${emojion}
    
-                Antirole create : ${emojion}
+                Antirôle create : ${emojion}
    
-                Antirole delete : ${emojion}
+                Antirôle delete : ${emojion}
    
-                Antirole update : ${emojion}
+                Antirôle update : ${emojion}
    
                 Anti Update : ${emojion}
 
@@ -271,11 +271,11 @@ module.exports = {
 
              Antichannel update : ${emojioff}
 
-             Antirole create : ${emojioff}
+             Antirôle create : ${emojioff}
 
-             Antirole delete : ${emojioff}
+             Antirôle delete : ${emojioff}
 
-             Antirole update : ${emojioff}
+             Antirôle update : ${emojioff}
 
              Anti Update : ${emojioff}
 
@@ -329,17 +329,17 @@ module.exports = {
                             emoji: '',
                         },
                         {
-                            label: 'Anti Role create',
+                            label: 'Anti rôle create',
                             value: 'arc',
                             emoji: '',
                         },
                         {
-                            label: 'Anti Role delete',
+                            label: 'Anti rôle delete',
                             value: 'ard',
                             emoji: '',
                         },
                         {
-                            label: 'Anti Role update',
+                            label: 'Anti rôle update',
                             value: 'aru',
                             emoji: '',
                         },
@@ -372,7 +372,7 @@ module.exports = {
 
                 //anti channel create
                 const antichannelembed = new Discord.MessageEmbed()
-                    .setDescription(`**Comment voulez vous configurer __l'anti channel create__**`)
+                    .setDescription(`**Configuration de __l'anti channel create__**`)
                     .setColor(color)
 
                 const antichannelrow = new Discord.MessageActionRow().addComponents(
@@ -399,7 +399,7 @@ module.exports = {
                 )
                 //anti channel delete
                 const antichanneldembed = new Discord.MessageEmbed()
-                    .setDescription(`**Comment voulez vous configurer __l'anti channel delete__**`)
+                    .setDescription(`**Configuration de __l'anti channel delete__**`)
                     .setColor(color)
 
                 const antichannedlrow = new Discord.MessageActionRow().addComponents(
@@ -426,7 +426,7 @@ module.exports = {
                 )
                 //anti channel update
                 const antichanneupdembed = new Discord.MessageEmbed()
-                    .setDescription(`**Comment voulez vous configurer __l'anti channel update__**`)
+                    .setDescription(`**Configuration de __l'anti channel update__**`)
                     .setColor(color)
 
                 const antichanneduprow = new Discord.MessageActionRow().addComponents(
@@ -453,7 +453,7 @@ module.exports = {
                 )
                 //anti Role create
                 const antirolecreateembed = new Discord.MessageEmbed()
-                    .setDescription(`**Comment voulez vous configurer __l'anti role create__**`)
+                    .setDescription(`**Configuration de __l'anti rôle create__**`)
                     .setColor(color)
 
                 const antirolecreaterow = new Discord.MessageActionRow().addComponents(
@@ -478,9 +478,9 @@ module.exports = {
                             }
                         ])
                 )
-                //anti role delete
+                //anti rôle delete
                 const antiroledeleteembed = new Discord.MessageEmbed()
-                    .setDescription(`**Comment voulez vous configurer __l'anti role delete__**`)
+                    .setDescription(`**Configuration de __l'anti rôle delete__**`)
                     .setColor(color)
 
                 const antiroledeleterow = new Discord.MessageActionRow().addComponents(
@@ -505,9 +505,9 @@ module.exports = {
                             }
                         ])
                 )
-                //anti role update
+                //anti rôle update
                 const antiroleupembed = new Discord.MessageEmbed()
-                    .setDescription(`**Comment voulez vous configurer __l'anti role update__**`)
+                    .setDescription(`**Configuration de __l'anti rôle update__**`)
                     .setColor(color)
 
                 const antiroleuprow = new Discord.MessageActionRow().addComponents(
@@ -534,7 +534,7 @@ module.exports = {
                 )
                 //anti Link
                 const antilinkembed = new Discord.MessageEmbed()
-                    .setDescription(`**Comment voulez vous configurer __l'antilink__**`)
+                    .setDescription(`**Configuration de __l'antilink__**`)
                     .setColor(color)
 
                 const antilinkrow = new Discord.MessageActionRow().addComponents(
@@ -562,7 +562,7 @@ module.exports = {
 
                 //anti wb
                 const antiwbembed = new Discord.MessageEmbed()
-                    .setDescription(`**Comment voulez vous configurer __l'anti WebHook__**`)
+                    .setDescription(`**Configuration de __l'anti WebHook__**`)
                     .setColor(color)
 
                 const antiwbrow = new Discord.MessageActionRow().addComponents(
@@ -589,13 +589,13 @@ module.exports = {
                 )
                 //Punition
                 const punishembed = new Discord.MessageEmbed()
-                    .setDescription(`**Comment voulez vous configurer la __Punition__**`)
+                    .setDescription(`**Configuration de la __Punition__**`)
                     .setColor(color)
 
                 const punishrow = new Discord.MessageActionRow().addComponents(
                     new Discord.MessageSelectMenu()
                         .setCustomId('Funny')
-                        .setPlaceholder(`Configurer la Punition`)
+                        .setPlaceholder(`Configurer la punition`)
                         .addOptions([
                             {
                                 label: 'Derank',
@@ -622,7 +622,7 @@ module.exports = {
 
                 //Anti update
                 const antiupdateembed = new Discord.MessageEmbed()
-                    .setDescription(`**Comment voulez vous configurer l' __anti update__**`)
+                    .setDescription(`**Configuration de l' __anti update__**`)
                     .setColor(color)
 
                 const antiupdaterow = new Discord.MessageActionRow().addComponents(
@@ -650,7 +650,7 @@ module.exports = {
 
                 //Anti Bot
                 const antibotembed = new Discord.MessageEmbed()
-                    .setDescription(`**Comment voulez vous configurer l'__anti bot__**`)
+                    .setDescription(`**Configuration de l'__anti bot__**`)
                     .setColor(color)
 
                 const antibotrow = new Discord.MessageActionRow().addComponents(
@@ -707,7 +707,7 @@ module.exports = {
 
                 //Anti Ban
                 const antibanembed = new Discord.MessageEmbed()
-                    .setDescription(`**Comment voulez vous configurer l'__antiban__**`)
+                    .setDescription(`**Configuration de l'__antiban__**`)
                     .setColor(color)
 
                 const antibanrow = new Discord.MessageActionRow().addComponents(
@@ -988,7 +988,7 @@ module.exports = {
 
                     if (value === "active") {
 
-                        c.reply({ content: `**Toutes les securitées ont étaient activées avec succés**`, ephemeral: true })
+                        c.reply({ content: `**Toutes les sécurités ont été activées avec succès**`, ephemeral: true })
 
                         atc.set(`config.${message.guild.id}.antichannelcreate`, true)
                         agu.set(`guildupdate_${message.guild.id}`, true)
@@ -1010,7 +1010,7 @@ module.exports = {
 
                     else if (value === "desactive") {
 
-                        c.reply({ content: `**Toutes les securitées ont étaient désactivées avec succés**`, ephemeral: true })
+                        c.reply({ content: `**Toutes les sécurités ont été désactivées avec succès**`, ephemeral: true })
 
                         atc.set(`config.${message.guild.id}.antichannelcreate`, false)
                         agu.set(`guildupdate_${message.guild.id}`, false)

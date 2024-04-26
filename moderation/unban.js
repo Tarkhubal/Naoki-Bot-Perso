@@ -7,7 +7,7 @@ const p3 = new db.table("Perm3")
 module.exports = {
     name: 'unban',
     usage: 'unban',
-    description: `Permet de unban`,
+    description: `Permet de débannir quelqu'un`,
     async execute(client, message, args) {
 
         const perm3 = p3.fetch(`perm3_${message.guild.id}`)
@@ -23,7 +23,7 @@ module.exports = {
                 return message.reply(`ID invalide.`)
 
             message.guild.bans.remove(user)
-            message.reply(`<@${user}> a été unban`)
+            message.reply(`<@${user}> a été débanni`)
 
         }
     }

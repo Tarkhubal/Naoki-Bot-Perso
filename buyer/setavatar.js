@@ -13,7 +13,7 @@ module.exports = {
             if (message.attachments.size > 0) {
                 message.attachments.forEach(attachment => {
                     client.user.setAvatar(attachment.url)
-                        .then(u => message.channel.send(`${message.author}, Vous avez changé la **photo de profil** de votre bot.`))
+                        .then(u => message.channel.send(`${message.author}, vous avez changé la **photo de profil** de votre bot.`))
                         .catch(() => message.reply("Veuillez patienter avant de rechanger mon avatar"))
                 });
             } else if (args.length) {
@@ -22,7 +22,7 @@ module.exports = {
                     .then(u => message.reply(`Vous avez changé la **photo de profil** de votre bot.`))
                     .catch(() => message.reply("Veuillez patienter avant de rechanger mon avatar"))
             } else {
-                message.channel.send(`Format accépté : Image **&** Lien`);
+                message.channel.send(`Format accepté : Image **&** Lien`);
             }
 
         }

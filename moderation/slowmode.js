@@ -25,7 +25,7 @@ module.exports = {
 
             if (args[0] === 'off') {
 
-                message.channel.send(`Le mode lent est maintenant désactiver dans <#${channel.id}>`)
+                message.channel.send(`Le mode lent est maintenant désactivé dans <#${channel.id}>`)
 
                 const embed = new Discord.MessageEmbed()
                     .setColor(color)
@@ -51,7 +51,7 @@ module.exports = {
 
             const embed = new Discord.MessageEmbed()
                 .setColor(color)
-                .setDescription(`<@${message.author.id}> a mis un \`slowmode\` de ${args[0]} sur le salon <#${message.channel.id}>`)
+                .setDescription(`<@${message.author.id}> a mis un \`mode lent\` de ${args[0]} dans le salon <#${message.channel.id}>`)
                 .setTimestamp()
                 .setFooter({ text: `📚` })
             const logchannel = client.channels.cache.get(ml.get(`${message.guild.id}.modlog`))

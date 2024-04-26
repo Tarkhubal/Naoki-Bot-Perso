@@ -9,7 +9,7 @@ const pgs = new db.table("PermGs")
 module.exports = {
     name: 'addrole',
     usage: 'addrole',
-    description: `Permet d'ajouter un role à un membre.`,
+    description: `Permet d'ajouter un rôle à un membre.`,
     async execute(client, message, args) {
 
         if (!args[0]) return message
@@ -26,9 +26,9 @@ module.exports = {
 
             if (!role) return message.channel.send(`Aucun rôle trouvé pour \`${args[1] || "rien"}\``)
 
-            if (rMember.roles.highest.position > client.user.id) return message.channel.send(`1 rôle ajouté à 0 membre`)
+            if (rMember.roles.highest.position > client.user.id) return message.channel.send(`1 rôle ajouté à aucun membre`)
 
-            if (rMember.roles.cache.has(role.id)) return message.channel.send(`1 rôle ajouté à 0 membre`)
+            if (rMember.roles.cache.has(role.id)) return message.channel.send(`1 rôle ajouté à aucun membre`)
 
             if (!rMember.roles.cache.has(role.id)) await rMember.roles.add(role.id, `Rôle ajouté par ${message.author.tag}`);
 
@@ -36,7 +36,7 @@ module.exports = {
 
             const embed = new Discord.MessageEmbed()
                 .setColor(color)
-                .setDescription(`➕ <@${message.author.id}> à utilisé la commande \`addrole\` sur ${rMember}\nRole ajouté : ${role}`)
+                .setDescription(`➕ <@${message.author.id}> a utilisé la commande \`addrole\` sur ${rMember}\nRôle ajouté : ${role}`)
                 .setTimestamp()
                 .setFooter({ text: `📚` })
             const logchannel = client.channels.cache.get(ml.get(`${message.guild.id}.modlog`))
@@ -59,9 +59,9 @@ module.exports = {
                     return message.channel.send("1 rôle n'a pas pu être ajouté car il a des permissions dangereuses")
                 }
 
-                if (rMember.roles.highest.position > client.user.id) return message.channel.send(`1 rôle enlevé à 0 membre`)
+                if (rMember.roles.highest.position > client.user.id) return message.channel.send(`1 rôle enlevé à aucun membre`)
 
-                if (rMember.roles.cache.has(role.id)) return message.channel.send(`1 rôle ajouté à 0 membre`)
+                if (rMember.roles.cache.has(role.id)) return message.channel.send(`1 rôle ajouté à aucun membre`)
 
                 if (!rMember.roles.cache.has(role.id)) await rMember.roles.add(role.id, `Rôle ajouté par ${message.author.tag}`);
 
@@ -69,7 +69,7 @@ module.exports = {
 
                 const embed = new Discord.MessageEmbed()
                     .setColor(color)
-                    .setDescription(`➕ <@${message.author.id}> à utilisé la commande \`addrole\` sur ${rMember}\nRole ajouté : ${role}`)
+                    .setDescription(`➕ <@${message.author.id}> a utilisé la commande \`addrole\` sur ${rMember}\nRôle ajouté : ${role}`)
                     .setTimestamp()
                     .setFooter({ text: `📚` })
                 const logchannel = client.channels.cache.get(ml.get(`${message.guild.id}.modlog`))

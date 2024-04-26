@@ -25,11 +25,11 @@ module.exports = {
                 new MessageSelectMenu()
 
                     .setCustomId('ticket')
-                    .setPlaceholder('Selectionner pour fermé le ticket !')
+                    .setPlaceholder('Selectionnez pour fermer le ticket !')
                     .addOptions([
                         {
-                            label: '🔒 Fermé le ticket',
-                            description: 'Fermé le Ticket',
+                            label: '🔒 Fermer le ticket',
+                            description: 'Fermer le ticket',
                             value: 'delete',
                         }
                     ])
@@ -48,13 +48,13 @@ module.exports = {
                     .setPlaceholder('Confirmation')
                     .addOptions([
                         {
-                            label: '🔒 Supprimé le ticket',
+                            label: '🔒 Supprimer le ticket',
                             description: 'Supprime le salon',
                             value: 'ticketdelete',
                         },
                         {
                             label: `📝 Transcript`,
-                            description: 'je vous envoie le transcript de ce ticket',
+                            description: 'Je vous envoie le transcript de ce ticket',
                             value: 'transcript',
                         }
                     ])
@@ -68,12 +68,12 @@ module.exports = {
 
             if (interaction.values[0] == "delete") {
 
-                interaction.reply({ content: `Veuilez confirmer la fermeture de votre ticket`, ephemeral: true })
+                interaction.reply({ content: `Veuillez confirmer la fermeture de votre ticket`, ephemeral: true })
 
                 const embed = new Discord.MessageEmbed()
-                    .setTitle('Fermé le ticket ?')
-                    .setDescription(`<@${interaction.member.id}> Etes vous sur de vouloir fermé ce ticket ?`)
-                    .setFooter({ text: `⚠️ Le salon sera immédiatement supprimé` })
+                    .setTitle('Fermer le ticket ?')
+                    .setDescription(`<@${interaction.member.id}> Êtes-vous sûr de vouloir fermer ce ticket ?`)
+                    .setFooter({ text: `⚠️ Le salon sera immédiatement supprimé !` })
                     .setColor(color)
                 interaction.channel.send({ embeds: [embed], components: [deleteticket] })
             }
@@ -122,7 +122,7 @@ module.exports = {
                 setTimeout(() => interaction.channel.delete(), 3000)
 
                 const embed = new Discord.MessageEmbed()
-                    .setDescription(`<@${interaction.member.id}> vient de fermé un ticket \nTicket Fermé : __${interaction.channel.name}__`)
+                    .setDescription(`<@${interaction.member.id}> vient de fermer un ticket \nTicket Fermé : __${interaction.channel.name}__`)
                     .setColor(color)
                 const ticketchannel = client.channels.cache.get(ticketlog)
                         if (ticketchannel) ticketchannel.send({ embeds: [embed] }).catch(() => false)
@@ -184,7 +184,7 @@ module.exports = {
                 });
 
                 const embed = new Discord.MessageEmbed()
-                    .setDescription(`<@${interaction.member.id}> vient de récuperer le Transcript de son ticket \nTicket : __${interaction.channel.name}__`)
+                    .setDescription(`<@${interaction.member.id}> vient de récupérer le transcript de son ticket\nTicket : __${interaction.channel.name}__`)
                     .setColor(color)
                 const ticketchannel = client.channels.cache.get(ticketlog)
                         if (ticketchannel) ticketchannel.send({ embeds: [embed] }).catch(() => false)
@@ -192,16 +192,16 @@ module.exports = {
 
             if (interaction.values[0] == "delete") {
                 const embed = new Discord.MessageEmbed()
-                    .setTitle('Fermé le ticket ?')
-                    .setDescription(`<@${interaction.member.id}> Etes vous sur de vouloir fermé ce ticket ?`)
-                    .setFooter({ text: `⚠️ Le salon sera imédiatement supprimé` })
+                    .setTitle('Fermer le ticket ?')
+                    .setDescription(`<@${interaction.member.id}> Êtes-vous sûr de vouloir fermer ce ticket ?`)
+                    .setFooter({ text: `⚠️ Le salon sera immédiatement supprimé !` })
                     .setColor(color)
                 interaction.channel.send({ embeds: [embed], components: [deleteticket] })
             }
         }
 
         if (interaction.customId == "select") {
-            if (DejaUnChannel) return interaction.reply({ content: '❌ Vous avez déja un ticket d\'ouvert sur le serveur.', ephemeral: true })
+            if (DejaUnChannel) return interaction.reply({ content: '❌ Vous avez déjà un ticket d\'ouvert sur le serveur.', ephemeral: true })
 
             if (interaction.values[0] == "open") {
                 
@@ -228,11 +228,11 @@ module.exports = {
                         
                         const ticket = new MessageEmbed()
                             .setTitle('📧・Ticket')
-                            .setDescription(`<@${interaction.member.id}> Veuillez bien détailler votre requète pour qu\'un administrateur du serveur vienne prendre en charge votre ticket.`)
+                            .setDescription(`<@${interaction.member.id}> Veuillez bien détailler votre requête pour qu\'un administrateur du serveur vienne prendre en charge votre ticket.`)
                             .setFooter({ text: 'Support' })
                             .setColor(color)
                         c.send({ embeds: [ticket], components: [row] })
-                        interaction.reply({ content: `🔓 Votre ticket à été ouvert avec succès. <#${c.id}>`, ephemeral: true })
+                        interaction.reply({ content: `🔓 Votre ticket a été ouvert avec succès. <#${c.id}>`, ephemeral: true })
 
                         const embed = new Discord.MessageEmbed()
                             .setDescription(`<@${interaction.member.id}> vient d'ouvrir un ticket`)
@@ -264,11 +264,11 @@ module.exports = {
                     }).then((c) => {
                         const ticket = new MessageEmbed()
                             .setTitle('📧・Ticket')
-                            .setDescription(`<@${interaction.member.id}> Veuillez bien détailler votre requète pour qu\'un administrateur du serveur vienne prendre en charge votre ticket.`)
+                            .setDescription(`<@${interaction.member.id}> Veuillez bien détailler votre requête pour qu\'un administrateur du serveur vienne prendre en charge votre ticket.`)
                             .setFooter({ text: 'Support' })
                             .setColor(color)
                         c.send({ embeds: [ticket], components: [row] })
-                        interaction.reply({ content: `🔓 Votre ticket à été ouvert avec succès. <#${c.id}>`, ephemeral: true }).catch(() => false)
+                        interaction.reply({ content: `🔓 Votre ticket a été ouvert avec succès. <#${c.id}>`, ephemeral: true }).catch(() => false)
 
                         const embed = new Discord.MessageEmbed()
                             .setDescription(`<@${interaction.member.id}> vient d'ouvrir un ticket`)

@@ -9,7 +9,7 @@ const emote = require('../emotes.json')
 module.exports = {
     name: 'muterole',
     usage: 'muterole',
-    description: `Permet de mute un utilisateur sur le serveur`,
+    description: `Permet de rendre muet un rôle sur le serveur`,
     async execute(client, message, args) {
 
         let color = cl.fetch(`color_${message.guild.id}`)
@@ -40,7 +40,7 @@ module.exports = {
                             }, "Muterole")
                         }
                         catch(e){}
-                        embed2.setDescription(`**__D'autres permission déjà existantes peuvent rendre innefficace le mute pour certains rôles dans les salons suivants :__**\n\n**${channel.name}**\n- ${muterole.name}\n`, true)
+                        embed2.setDescription(`**__D'autres permissions déjà existantes peuvent rendre inefficace le mute pour certains rôles dans les salons suivants :__**\n\n**${channel.name}**\n- ${muterole.name}\n`, true)
                         embed2.setFooter({ text: "Tous les rôles ayant la permissons \"envoyer des messages\" en vert seront insensible au mute" })
 
                     })

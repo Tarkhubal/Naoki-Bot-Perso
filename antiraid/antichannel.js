@@ -103,7 +103,7 @@ module.exports = {
                 }
 
                 else {
-                    return message.reply(`Paramètres invalide`)
+                    return message.reply(`Paramètre invalide. Veuillez spécifier **on** ou **off**`)
                 }
             }
         }

@@ -30,8 +30,8 @@ module.exports = {
                 const channellogs = db.get(`${message.guild.id}.suggestions`)
 
                 const embed = new Discord.MessageEmbed()
-                    .setTitle(`${message.author.tag} à défini ce salon commme salon des suggestions`)
-                    .setDescription(`${emote.logs.question} Ce salon est désormais utilisé pour __toutes__ **les Suggestions** du serveur\n Executeur : <@${message.author.id}>`)
+                    .setTitle(`${message.author.tag} a défini ce salon commme salon des suggestions`)
+                    .setDescription(`${emote.logs.question} Ce salon est désormais utilisé pour __toutes__ **les suggestions** du serveur\nExécuteur : <@${message.author.id}>`)
                     .setTimestamp()
                     .setFooter({ text: `${footer}` })
                 client.channels.cache.get(channellogs).send({ embeds: [embed] }).catch(() => false)

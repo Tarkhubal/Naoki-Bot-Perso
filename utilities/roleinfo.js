@@ -25,7 +25,7 @@ module.exports = {
       if (owner.get(`owners.${message.author.id}`) || message.member.roles.cache.has(perm1) || message.member.roles.cache.has(perm2) || message.member.roles.cache.has(perm3) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
 
         let role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0])
-        if(!role) return message.channel.send({content: 'Veuillez préciser un role'})
+        if(!role) return message.channel.send({content: 'Veuillez préciser un rôle'})
         
             
         const perms = {

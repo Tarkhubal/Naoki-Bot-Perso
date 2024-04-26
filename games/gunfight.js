@@ -97,7 +97,7 @@ module.exports = {
                 content: positions.ended1,
                 components: componentsArray,
             });
-            return button.reply({ content: `<@${opponent.id}> à gagné!` });
+            return button.reply({ content: `<@${opponent.id}> a gagné!` });
         }
     },
 };

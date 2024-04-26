@@ -69,7 +69,7 @@ module.exports = {
 
             const verifLevels = {
                 NONE: "Aucune",
-                LOW: "faible",
+                LOW: "Faible",
                 MEDIUM: "Moyen",
                 HIGH: "Élevé",
                 VERY_HIGH: "Maximum",

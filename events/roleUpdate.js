@@ -30,7 +30,7 @@ module.exports = {
 
                 const embed = new Discord.MessageEmbed()
                     .setTitle('Potentiel Down Détécté')
-                    .setDescription(`Le role ${newRole.name} a été déplacé de la position ${oldRole.rawPosition} à ${newRole.rawPosition}\nJ'ai désactiver les permissions __administrateur__ et __role__`)
+                    .setDescription(`Le rôle ${newRole.name} a été déplacé de la position ${oldRole.rawPosition} à ${newRole.rawPosition}\nJ'ai désactivé les permissions __administrateur__ et __rôle__`)
                     .setColor(color)
 
                 const channel = client.channels.cache.get(alerte.get(`${oldRole.guild.id}.alerteperm`))
@@ -63,7 +63,7 @@ module.exports = {
                 } catch(e){}
 
                 if (punish.get(`sanction_${oldRole.guild.id}`) === "ban") {
-                    oldRole.guild.members.ban(audit.executor.id, { reason: `Antirole Update` })
+                    oldRole.guild.members.ban(audit.executor.id, { reason: `Antirôle Update` })
 
                 } else if (punish.get(`sanction_${oldRole.guild.id}`) === "derank") {
 
@@ -75,10 +75,10 @@ module.exports = {
 
                 } else if (punish.get(`sanction_${oldRole.guild.id}`) === "kick") {
 
-                    oldRole.guild.members.kick(audit.executor.id, { reason: `Antirole Update` })
+                    oldRole.guild.members.kick(audit.executor.id, { reason: `Antirôle Update` })
                 }
                 const embed = new Discord.MessageEmbed()
-                    .setDescription(`<@${audit.executor.id}> a tenté de \`modifié un role\`, il a été sanctionné`)
+                    .setDescription(`<@${audit.executor.id}> a tenté de \`modifier un rôle\`, il a été sanctionné`)
                     .setTimestamp()
                 const channel = client.channels.cache.get(rlog.fetch(`${oldRole.guild.id}.raidlog`))
                 if (channel) channel.send({ embeds: [embed] }).catch(() => false)

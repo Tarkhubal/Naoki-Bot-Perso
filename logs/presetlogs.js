@@ -128,7 +128,7 @@ module.exports = {
                         giveawaylog.set(`${message.guild.id}.giveawaylog`, logs.id)
                     })
 
-                    msge.edit(`${emote.buyer.valid} Création de la **catégorie des logs** effectué avec succès.`)
+                    msge.edit(`${emote.buyer.valid} Création de la **catégorie des logs** effectuée avec succès.`)
 
                 }
                 )

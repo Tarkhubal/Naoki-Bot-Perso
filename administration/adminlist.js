@@ -9,7 +9,7 @@ const p3 = new db.table("Perm3")
 module.exports = {
     name: 'adminlist',
     usage: 'adminlist',
-    description: `Permet d'afficher la liste des admins présent sur le serveur.`,
+    description: `Permet d'afficher la liste des admins présents sur le serveur.`,
     async execute(client, message, args) {
 
         const perm2 = p2.fetch(`perm2_${message.guild.id}`)
@@ -28,7 +28,7 @@ module.exports = {
                 const embed = new Discord.MessageEmbed()
                     .setTitle(`Liste des Admins`)
                     .setDescription(`\n ${str_content}`)
-                    .setFooter({ text: `Total: ${str_filtrer.size}` })
+                    .setFooter({ text: `Total : ${str_filtrer.size}` })
                     .setColor(color)
                 message.channel.send({ embeds: [embed] })
             }

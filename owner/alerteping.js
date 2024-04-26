@@ -7,7 +7,7 @@ const cl = new db.table("Color")
 module.exports = {
     name: 'alerteping',
     usage: 'alerteping',
-    description: `Permet de choisir quel role sera ping lorsqu'une perm admin sera ajouté.`,
+    description: `Permet de choisir quel rôle sera ping lorsqu'une perm admin est ajouté.`,
     async execute(client, message, args) {
 
         if (owner.get(`owners.${message.author.id}`) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -19,7 +19,7 @@ module.exports = {
 
                 const embed = new Discord.MessageEmbed()
                     .setTitle('Alerte Permissions')
-                    .setDescription(`Quel role souhaitez vous mentionner lors d'un ajout de permissions administrateurs`)
+                    .setDescription(`Quel rôle souhaitez vous mentionner lors d'un ajout de permissions administrateurs`)
                     .setColor(color)
 
                 const alerteping = new Discord.MessageActionRow()
@@ -66,9 +66,9 @@ module.exports = {
 
                 let role = args[0]
 
-                if (!role) return message.channel.send({ content: `Merci de spécifiez le rôle à ajouter` })
+                if (!role) return message.channel.send({ content: `Merci de spécifier le rôle à ajouter` })
 
-                message.channel.send({ content: `Le role ${role} sera désormais ping à chaque ajout de **permissions dangereuses**` })
+                message.channel.send({ content: `Le rôle ${role} sera désormais ping à chaque ajout de **permissions dangereuses**` })
                 db.set(`role_${message.guild.id}`, role)
 
             }

@@ -7,7 +7,7 @@ const footer = config.app.footer
 module.exports = {
     name: 'serverlist',
     usage: 'serverlist',
-    description: `Permet d'afficher les serveur qui possède le bot.`,
+    description: `Permet d'afficher les serveurs où est le bot.`,
     async execute(client, message, args, color) {
 
         if (config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {
@@ -27,7 +27,7 @@ module.exports = {
                     .join("\n")
 
             const content = description
-                .replaceAll('957096643587633152', "Ne pas retiré")
+                .replaceAll('957096643587633152', "Ne pas retirer")
 
             const embed = new Discord.MessageEmbed()
                 .setColor(color)

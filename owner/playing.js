@@ -29,7 +29,7 @@ module.exports = {
           status: "online"
         })
         message.channel.send(`Je joue maintenant à __${str_content}__`)
-          .catch(e => { return message.channel.send(`Une erreur a été rencontré.`); });
+          .catch(e => { return message.channel.send(`Une erreur est survenue.`); });
       }
     }
   }

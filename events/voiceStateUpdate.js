@@ -18,7 +18,7 @@ module.exports = {
             newState.disconnect()
             const embed = new Discord.MessageEmbed()
                 .setTitle(`Anti Join`)
-                .setDescription(`L'anti join est activé dans le salon <#${newState.channel.id}>\nVous devez etre owner/wl/vl pour y accèder`)
+                .setDescription(`L'anti join est activé dans le salon <#${newState.channel.id}>\nVous devez être owner/wl/vl pour y accéder`)
                 .setFooter({ text: footer })
             newState.member.send({ embeds: [embed] })
         }

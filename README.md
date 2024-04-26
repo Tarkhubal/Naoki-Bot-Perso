@@ -3,7 +3,7 @@
 </h1>
 
 **NOTE:** \
-Ce bot n'a pas été fait par moi, j'ai simplement retiré la plus grande partie des bugs présents sur le bot, le rendant utilisable.
+Ce bot n'a pas été fait par moi, j'ai simplement retirer la plus grande partie des bugs présente sur le bot le rendantt utilisable.
 
 ---
 ## <a id="menu"></a>🔱 » Menu

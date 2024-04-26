@@ -21,15 +21,15 @@ module.exports = {
 
         let notgay = new Discord.MessageEmbed()
             .setColor(color)
-            .setTitle(`Es tu Gay ?`)
+            .setTitle(`Es-tu gay ?`)
             .setThumbnail(member.user.displayAvatarURL())
-            .setDescription(`**${member.user.username} aime les Femmes c'est pas un gay sale fou**`)
+            .setDescription(`**${member.user.username} aime les femmes c'est pas un gay sale fou**`)
 
         let biengay = new Discord.MessageEmbed()
             .setColor(color)
             .setTitle(`Es tu Gay ?`)
             .setThumbnail(member.user.displayAvatarURL())
-            .setDescription(`**${member.user.username} est bien gay à 1000% est soutient les lgbt :rainbow_flag:**`)
+            .setDescription(`**${member.user.username} est bien gay à 1000% et soutient les lgbt :rainbow_flag:**`)
             .setImage('https://cdn.discordapp.com/attachments/926958863201222686/1001961571028828261/pddddd.gif')
 
         //hétéros
@@ -44,9 +44,9 @@ module.exports = {
 
         let embed = new Discord.MessageEmbed()
             .setColor(color)
-            .setTitle(`Es tu Gay ?`)
+            .setTitle(`Es-tu gay ?`)
             .setThumbnail(member.user.displayAvatarURL())
-            .setDescription(`**${member.user.username} est ${Result}% Gay :rainbow_flag:**`)
+            .setDescription(`**${member.user.username} est gay à ${Result}% :rainbow_flag:**`)
 
         message.channel.send({ embeds: [embed] });
 

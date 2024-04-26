@@ -11,7 +11,7 @@ module.exports = {
     name: 'wl',
     usage: 'wl',
     category: "owner",
-    description: `Permet de gérer la wl du bot.`,
+    description: `Permet de rajouter quelqu'un dans la liste blanche du bot.`,
     async execute(client, message, args) {
 
         if (owner.get(`owners.${message.author.id}`) || config.app.owners.includes(message.author.id) || config.app.funny.includes(message.author.id) === true) {

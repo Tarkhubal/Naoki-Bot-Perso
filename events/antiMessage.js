@@ -82,12 +82,12 @@ module.exports = {
             if (isLink == true) {
                 message.delete()
                 message.member.timeout(15000)
-                message.channel.send({ content: `<@${message.author.id}> Tu n'as pas le droit d'envoyé de lien dans ce serveur.` }).then(msg => {
+                message.channel.send({ content: `<@${message.author.id}> tu n'as pas le droit d'envoyer de liens dans ce serveur.` }).then(msg => {
                     setTimeout(() => msg.delete(), 6000)
                 })
 
                 const embed = new Discord.MessageEmbed()
-                    .setDescription(`<@${message.author.id}> a envoyer un \`lien\` dans \`${message.channel.name}\`, j'ai supprimé son message`)
+                    .setDescription(`<@${message.author.id}> a envoyé un \`lien\` dans \`${message.channel.name}\`, j'ai supprimé son message.`)
                     .setTimestamp()
                 client.channels.cache.get(rlog.fetch(`${message.guild.id}.raidlog`)).send({ embeds: [embed] }).catch(() => false)
             }
@@ -99,13 +99,13 @@ module.exports = {
             if (isLinkall == true) {
                 message.delete().catch(() => false)
                 message.member.timeout(15000).catch(() => false)
-                message.channel.send({ content: `<@${message.author.id}> Tu n'as pas le droit d'envoyé de lien dans ce serveur.` }).then(msg => {
+                message.channel.send({ content: `<@${message.author.id}> tu n'as pas le droit d'envoyer de liens dans ce serveur.` }).then(msg => {
                     setTimeout(() => msg.delete(), 6000)
                 })
 
 
                 const embed = new Discord.MessageEmbed()
-                    .setDescription(`<@${message.author.id}> a envoyer un \`lien\` dans \`${message.channel.name}\`, j'ai supprimé son message`)
+                    .setDescription(`<@${message.author.id}> a envoyé un \`lien\` dans \`${message.channel.name}\`, j'ai supprimé son message.`)
                     .setTimestamp()
                 const logchannel = client.channels.cache.get(rlog.fetch(`${message.guild.id}.raidlog`))
                 if (logchannel) logchannel.send({ embeds: [embed] }).catch(() => false)
@@ -122,13 +122,13 @@ module.exports = {
                     ch.setPosition(message.channel.position);
                     message.channel.delete();
                     message.member.timeout(60000)
-                    ch.send(`**le salon a été renew car <@${message.author.id}> à ping tout le serveur**`).then(msg => {
+                    ch.send(`**Le salon a été renew car <@${message.author.id}> a ping tout le serveur**`).then(msg => {
                         setTimeout(() => msg.delete(), 50000)
                     })
                 })
 
                 const embed = new Discord.MessageEmbed()
-                    .setDescription(`<@${message.author.id}> a mentionner \`tout le serveur\` dans \`${message.channel.name}\`, j'ai renew le salon`)
+                    .setDescription(`<@${message.author.id}> a mentionné \`tout le serveur\` dans \`${message.channel.name}\`, j'ai renew le salon`)
                     .setTimestamp()
                 const logchannel = client.channels.cache.get(rlog.fetch(`${message.guild.id}.raidlog`))
                 if (logchannel) logchannel.send({ embeds: [embed] }).catch(() => false)

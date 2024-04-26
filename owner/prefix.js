@@ -23,9 +23,9 @@ module.exports = {
 
             if (!newprefix) return message.reply("Merci d'indiquer le prefix que vous souhaitez")
 
-            if (newprefix.length > 5) return message.reply("Merci de choisir un prefix qui contient maximum 5 carractère")
+            if (newprefix.length > 5) return message.reply("Merci de choisir un prefix qui contient maximum 5 caractères")
 
-            message.channel.send(`Mon est prefix est désormais \`${newprefix}\``)
+            message.channel.send(`Mon prefix est désormais \`${newprefix}\``)
             p.set(`prefix_${message.guild.id}`, newprefix)
 
         }
